@@ -26,6 +26,11 @@
 	width: 50%;
 }
 
+#position-input, #bg-border-type-input {
+	width: 50%;
+	height: 35px;
+}
+
 // Live Display of Call To Action 
 .cta-new-live {
 	display: flex;
@@ -33,7 +38,6 @@
 	z-index: 1;
 	bottom: 5%;
 	left: 32.5%;
-	right: none;
 	background-color: lightblue;
 	width: 565px;
 	height: 100px;

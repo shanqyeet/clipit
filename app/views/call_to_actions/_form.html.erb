@@ -16,14 +16,14 @@
     <%= form.label :description %>
     <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
 
-     <%= form.label :button_text %>
-    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onchange:"btnTextLive()" %> 
+    <%= form.label :button_text %>
+    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onkeyup:"btnTextLive()" %> 
 
     <%= form.label :page_link %>
-    <%= form.text_field :page_link,class:"form-control" %>
+    <%= form.text_field :page_link,class:"form-control", id:"page-link-input", onchange:"pageLinkLive()" %>
 
-     <%= form.label :position %>
-    <%= form.select :position, ["left", "middle", "right"], class:"form-control" %>
+    <%= form.label :position %>
+    <%= form.select :position, ["left", "middle", "right"], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
   </div>
 
   <!-- Customization of CTA elements  -->
@@ -37,12 +37,13 @@
       <span id="bg-color-output">#000000</span>      
     </div>
 
+    <%= form.label :border_type %>
+    <%= form.select :bg_border_type, ["none","solid","dotter","dashed","double","groove","ridge","inset","outset"], {class:"form-control"}, {id:"bg-border-type-input", onchange:"bgBorderTypeLive()"} %>
 
     <%= form.label :border_size %>
-    <%= form.text_field :bg_border_size, class:"form-control" %>
+    <%= form.number_field :bg_border_size, in: 0..20, class:"form-control", id:"bg-border-size-input", onchange:"bgBorderSizeLive()" %>
+
     
-    <%= form.label :border_type %>
-    <%= form.text_field :bg_border_type, class:"form-control" %>
     
     <%= form.label :border_radius%>
     <div style="display:flex;">
@@ -95,53 +96,3 @@
   </div>
 <% end %>
 
-<script type="text/javascript">
-  function descLive(){
-    let desc_out = document.getElementById("desc-output");
-    let desc = document.getElementById("desc-input").value;
-    desc_out.innerHTML = desc;
-  }
-
-  function btnTextLive(){
-    let btn_text_output = document.getElementById("btn-text-output");
-    let btn_text_input = document.getElementById("btn-text-input").value;
-    btn_text_output.innerHTML = btn_text_input;
-  }
-
-  function bgRadiusLive(){
-    let bg_radius_output = document.getElementById("bg-border-radius-output");
-    let bg_raidus_input = document.getElementById("bg-border-radius-input").value;
-    bg_radius_output.innerHTML = bg_raidus_input;
-  }
-  function bgColorLive(){
-    let bg_color_output = document.getElementById("bg-color-output");
-    let bg_color_input = document.getElementById("bg-color-input").value;
-    let bg_color_live = document.getElementById("bg-color-live");
-    bg_color_output.innerHTML = bg_color_input;
-    bg_color_live.innerHTML = bg_color_input;
-  }
-
-  function bgBorderColorLive(){
-    let bg_border_color_output = document.getElementById("bg-border-color-output");
-    let bg_border_color_input = document.getElementById("bg-border-color-input").value;
-    bg_border_color_output.innerHTML = bg_border_color_input;
-  }
-
-  function btnColorLive(){
-    let btn_color_output = document.getElementById("btn-color-output");
-    let btn_color_input = document.getElementById("btn-color-input").value;
-    btn_color_output.innerHTML = btn_color_input;
-  } 
-
-  function btnRadiusLive(){
-    let btn_radius_output = document.getElementById("btn-border-radius-output");
-    let btn_raidus_input = document.getElementById("btn-border-radius-input").value;
-    btn_radius_output.innerHTML = btn_raidus_input;
-  }
-  
-  function btnBorderColorLive(){
-    let btn_border_color_output = document.getElementById("btn-border-color-output");
-    let btn_border_color_input = document.getElementById("btn-border-color-input").value;
-    btn_border_color_output.innerHTML = btn_border_color_input;
-  }
-</script>
