@@ -1,0 +1,98 @@
+<%= form_with(url: user_call_to_actions_path, local: true) do |form| %>
+  <% if call_to_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call_to_action.errors.count, "error") %> prohibited this call_to_action from being saved:</h2>
+
+      <ul>
+      <% call_to_action.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <!-- general customization of CTA -->
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
+
+    <%= form.label :button_text %>
+    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onkeyup:"btnTextLive()" %> 
+
+    <%= form.label :page_link %>
+    <%= form.text_field :page_link,class:"form-control", id:"page-link-input", onchange:"pageLinkLive()" %>
+
+    <%= form.label :position %>
+    <%= form.select :position, ["left", "middle", "right"], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
+  </div>
+
+  <%= form.label :border_radius%>
+  <div style="display:flex;">
+    <span id="bg-border-radius-output">0</span>
+    <%= form.range_field :bg_border_radius, in: 0..50, step:0.1,id:"bg-border-radius-input", onchange:"bgRadiusLive()" %>
+    
+  </div>
+  <!-- Customization of CTA elements  -->
+  
+  <div class="form-group">
+    <p><strong>Background</strong></p>
+    
+    <%= form.label :color %>
+    <div style="display:flex;"">
+      <%= form.color_field :bg_color, class:"form-control color-tab", id:"bg-color-input", onchange:"bgColorLive()"%>
+      <span id="bg-color-output">#000000</span>      
+    </div>
+
+    <%= form.label :outline_type %>
+    <%= form.select :bg_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {class:"form-control"}, {id:"bg-outline-type-input", onchange:"bgoutlineTypeLive()"} %>
+
+    <%= form.label :outline_size %>
+    <%= form.number_field :bg_outline_size, in: 0..20, class:"form-control", id:"bg-outline-size-input", onchange:"bgoutlineSizeLive()" %>
+    
+    <%= form.label :outline_color %>
+    <div style="display:flex;">
+      <%= form.color_field :bg_outline_color, class:"form-control color-tab", id:"bg-outline-color-input", onchange:"bgoutlineColorLive()" %>
+      <span id="bg-outline-color-output">#000000</span>
+    </div>
+    
+  </div>
+
+  <!-- Cutomization of CTA buttons elements  -->
+  <div class="form-group">
+    <p><strong>Button</strong></p>
+    
+    <%= form.label :color %>
+    <div style="display:flex;">
+      <%= form.color_field :btn_color, class:"form-control color-tab", id:"btn-color-input", onchange:"btnColorLive()" %>
+      <span id="btn-color-output">#000000</span>
+    </div>
+    
+    <%= form.label :border_radius %>
+    <div style="display:flex;">
+      <span id="btn-border-radius-output">0</span>
+      <%= form.range_field :btn_border_radius, in: 0..50, step:0.1,id:"btn-border-radius-input", onchange:"btnRadiusLive()" %>
+    </div>
+
+    <%= form.label :outline_type %>
+    <%= form.select :btn_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {class:"form-control"}, {id:"btn-outline-type-input", onchange:"btnoutlineTypeLive()"} %>
+
+
+    <%= form.label :outline_size %>
+    <%= form.number_field :btn_outline_size, in: 0..20, class:"form-control", id:"btn-outline-size-input", onchange:"btnoutlineSizeLive()" %>
+    
+    
+
+    <%= form.label :outline_color %>
+    <div style="display:flex;">
+      <%= form.color_field :btn_outline_color, class:"form-control color-tab", id:"btn-outline-color-input", onchange:"btnoutlineColorLive()" %>
+      <span id="btn-outline-color-output">#000000</span>
+    </div>
+
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit "Create", class:"btn btn-lg btn-warning" %>
+  </div>
+<% end %>
+

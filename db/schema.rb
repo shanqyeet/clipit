@@ -10,10 +10,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180404034044) do
+ActiveRecord::Schema.define(version: 20180406144133) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.json "logo"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_brands_on_user_id"
+  end
+
+  create_table "call_to_actions", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "brand_id"
+    t.string "description"
+    t.string "button_text"
+    t.string "position"
+    t.string "bg_color"
+    t.string "bg_border_size"
+    t.string "bg_border_type"
+    t.string "bg_border_color"
+    t.string "bg_border_radius"
+    t.string "btn_color"
+    t.string "btn_border_size"
+    t.string "btn_border_type"
+    t.string "btn_border_color"
+    t.string "btn_border_radius"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "page_link"
+    t.index ["brand_id"], name: "index_call_to_actions_on_brand_id"
+    t.index ["user_id"], name: "index_call_to_actions_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Call To Actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @call_to_actions.each do |call_to_action| %>
+      <tr>
+        <td><%= link_to 'Show', call_to_action %></td>
+        <td><%= link_to 'Edit', edit_call_to_action_path(call_to_action) %></td>
+        <td><%= link_to 'Destroy', call_to_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Call To Action', new_call_to_action_path %>
