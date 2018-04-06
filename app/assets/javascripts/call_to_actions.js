@@ -31,23 +31,25 @@ function descLive(){
 
 // Background customization functions
 
-  function bgBorderTypeLive(){
-    let bg_border_type_live = document.getElementById("cta-new-live");
-    let bg_border_type_input = document.getElementById("bg-border-type-input").value;
-    bg_border_type_live.style.borderStyle = bg_border_type_input;
+  function bgoutlineTypeLive(){
+    let bg_outline_type_live = document.getElementById("cta-new-live");
+    let bg_outline_type_input = document.getElementById("bg-outline-type-input").value;
+    bg_outline_type_live.style.outlineStyle = bg_outline_type_input;
   }
 
-  function bgBorderSizeLive(){
-    let bg_border_size_live = document.getElementById("cta-new-live");
-    let bg_border_size_input = document.getElementById("bg-border-size-input").value;
-    bg_border_size_live.style.borderWidth = bg_border_size_input + 'px';
+  function bgoutlineSizeLive(){
+    let bg_outline_size_live = document.getElementById("cta-new-live");
+    let bg_outline_size_input = document.getElementById("bg-outline-size-input").value;
+    bg_outline_size_live.style.outlineWidth = bg_outline_size_input + 'px';
   }
   
 
   function bgRadiusLive(){
     let bg_radius_output = document.getElementById("bg-border-radius-output");
-    let bg_raidus_input = document.getElementById("bg-border-radius-input").value;
-    bg_radius_output.innerHTML = bg_raidus_input;
+    let bg_radius_input = document.getElementById("bg-border-radius-input").value;
+    let bg_radius_live = document.getElementById("cta-new-live");
+    bg_radius_output.innerHTML = bg_radius_input;
+    bg_radius_live.style.borderRadius = bg_radius_input + "px";
   }
 
   function bgColorLive(){
@@ -58,10 +60,12 @@ function descLive(){
     bg_color_live.style.backgroundColor = bg_color_input;
   }
 
-  function bgBorderColorLive(){
-    let bg_border_color_output = document.getElementById("bg-border-color-output");
-    let bg_border_color_input = document.getElementById("bg-border-color-input").value;
-    bg_border_color_output.innerHTML = bg_border_color_input;
+  function bgoutlineColorLive(){
+    let bg_outline_color_output = document.getElementById("bg-outline-color-output");
+    let bg_outline_color_input = document.getElementById("bg-outline-color-input").value;
+    let bg_outline_color_live = document.getElementById("cta-new-live");
+    bg_outline_color_output.innerHTML = bg_outline_color_input;
+    bg_outline_color_live.style.outlineColor = bg_outline_color_input;
   }
 
 
@@ -69,18 +73,37 @@ function descLive(){
   function btnColorLive(){
     let btn_color_output = document.getElementById("btn-color-output");
     let btn_color_input = document.getElementById("btn-color-input").value;
+    let btn_live = document.getElementById("btn-text-output");
     btn_color_output.innerHTML = btn_color_input;
+    btn_live.style.backgroundColor = btn_color_input;
   } 
 
   function btnRadiusLive(){
     let btn_radius_output = document.getElementById("btn-border-radius-output");
-    let btn_raidus_input = document.getElementById("btn-border-radius-input").value;
-    btn_radius_output.innerHTML = btn_raidus_input;
+    let btn_radius_input = document.getElementById("btn-border-radius-input").value;
+    let btn_live = document.getElementById("btn-text-output");
+    btn_radius_output.innerHTML = btn_radius_input;
+    btn_live.style.borderRadius = btn_radius_input + "px";
   }
+
+  function btnoutlineTypeLive(){
+    let btn_outline_type_live = document.getElementById("btn-text-output");
+    let btn_outline_type_input = document.getElementById("btn-outline-type-input").value;
+    btn_outline_type_live.style.outlineStyle = btn_outline_type_input;
+  }
+
+  function btnoutlineSizeLive(){
+    let btn_outline_size_live = document.getElementById("btn-text-output");
+    let btn_outline_size_input = document.getElementById("btn-outline-size-input").value;
+    btn_outline_size_live.style.outlineWidth = btn_outline_size_input + 'px';
+  }
+
   
-  function btnBorderColorLive(){
-    let btn_border_color_output = document.getElementById("btn-border-color-output");
-    let btn_border_color_input = document.getElementById("btn-border-color-input").value;
-    btn_border_color_output.innerHTML = btn_border_color_input;
+  function btnoutlineColorLive(){
+    let btn_outline_color_output = document.getElementById("btn-outline-color-output");
+    let btn_outline_color_input = document.getElementById("btn-outline-color-input").value;
+    let btn_outline_color_live = document.getElementById("btn-text-output");
+    btn_outline_color_output.innerHTML = btn_outline_color_input;
+    btn_outline_color_live.style.outlineColor = btn_outline_color_input; 
   }
   
