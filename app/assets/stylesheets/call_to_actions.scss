@@ -1,0 +1,102 @@
+// Place all the styles related to the CallToActions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.cta-new-main {
+	display: flex;
+	height: 725px;
+}
+
+.cta-new-left-panel {
+	padding: 25px;
+	width: 30%;
+	background-color: #F7EBC9;
+	overflow: scroll;
+}
+
+
+.cta-new-right-panel {
+	width: 70%;
+}
+
+
+.color-tab {
+	height: 35px;
+	width: 50%;
+}
+
+// Live Display of Call To Action 
+.cta-new-live {
+	display: flex;
+	position: fixed;
+	z-index: 1;
+	bottom: 5%;
+	left: 32.5%;
+	right: none;
+	background-color: lightblue;
+	width: 565px;
+	height: 100px;
+	border-radius: 8px;
+}
+
+.cta-new-live-logo {
+	background-color: yellow;
+	width:20%;
+	height: 80%;
+	text-align: center;
+	margin: 2%;
+	display: flex;
+	flex-direciton: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 8px;
+}
+
+.cta-new-live-middlebox {
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	width: 55%;
+}
+
+.cta-new-live-name {
+	height: 30%;
+}
+
+.cta-new-live-description {
+	height : 70%;
+}
+
+.cta-new-live-endbox {
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	padding:10px;
+}
+
+.cta-new-live-close {
+	height: 50%;
+	padding: 5%;
+	display:flex;
+	justify-content: flex-end;
+}
+
+.cta-new-live-button {
+	height: 50%;
+}
+
+// Cutomization of CTA properties 
+#bg-border-radius-input, #btn-border-radius-input {
+	width: 85%;
+}
+
+#bg-border-radius-output, #btn-border-radius-output {
+	border: solid 1px black;
+	background-color: white;
+	margin-right: 10px;
+	padding: 5px;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+}

@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 # 
 gem 'devise'
 # authentication system 
+gem 'omniauth'
+# enable omniauthing with devise
 gem 'omniauth-google-oauth2'
 # google login
 gem 'figaro'

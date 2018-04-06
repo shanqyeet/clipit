@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+	root to: "pages#home"
 
-  root to: "pages#home"
+	devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks"}
+	resources :users do 
+  		resources :brands do 
+  			resources :call_to_actions, except: [:new, :create]
+  		end 
+  		resources :call_to_actions, only: [:new, :create]
+	end 
 
 end

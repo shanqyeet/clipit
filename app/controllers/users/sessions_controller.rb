@@ -9,9 +9,9 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def after_sign_up_path_for(resource)
+    user_path(curret_user)
+  end
 
   # DELETE /resource/sign_out
   # def destroy

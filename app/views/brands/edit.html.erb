@@ -1,0 +1,8 @@
+<h1>Editing Brand</h1>
+<div>
+	<p>Existing brand name: <%= @brand.name %></p>
+	<p>Existing brand logo: <%= @brand.logo %></p>
+</div>
+<%= render 'edit_form', brand: @brand %>
+
+<%= link_to 'Back', user_path(current_user) %>

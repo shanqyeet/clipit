@@ -1,0 +1,147 @@
+<%= form_with(url: user_call_to_actions_path, local: true) do |form| %>
+  <% if call_to_action.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(call_to_action.errors.count, "error") %> prohibited this call_to_action from being saved:</h2>
+
+      <ul>
+      <% call_to_action.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <!-- general customization of CTA -->
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
+
+     <%= form.label :button_text %>
+    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onchange:"btnTextLive()" %> 
+
+    <%= form.label :page_link %>
+    <%= form.text_field :page_link,class:"form-control" %>
+
+     <%= form.label :position %>
+    <%= form.select :position, ["left", "middle", "right"], class:"form-control" %>
+  </div>
+
+  <!-- Customization of CTA elements  -->
+  
+  <div class="form-group">
+    <p><strong>Background</strong></p>
+    
+    <%= form.label :color %>
+    <div style="display:flex;"">
+      <%= form.color_field :bg_color, class:"form-control color-tab", id:"bg-color-input", onchange:"bgColorLive()"%>
+      <span id="bg-color-output">#000000</span>      
+    </div>
+
+
+    <%= form.label :border_size %>
+    <%= form.text_field :bg_border_size, class:"form-control" %>
+    
+    <%= form.label :border_type %>
+    <%= form.text_field :bg_border_type, class:"form-control" %>
+    
+    <%= form.label :border_radius%>
+    <div style="display:flex;">
+      <span id="bg-border-radius-output">0</span>
+      <%= form.range_field :bg_border_radius, in: 0..50, step:0.1,id:"bg-border-radius-input", onchange:"bgRadiusLive()" %>
+      
+    </div>
+    
+    <%= form.label :border_color %>
+    <div style="display:flex;">
+      <%= form.color_field :bg_border_color, class:"form-control color-tab", id:"bg-border-color-input", onchange:"bgBorderColorLive()" %>
+      <span id="bg-border-color-output">#000000</span>
+    </div>
+    
+  </div>
+
+  <!-- Cutomization of CTA buttons elements  -->
+  <div class="form-group">
+    <p><strong>Button</strong></p>
+    
+    <%= form.label :color %>
+    <div style="display:flex;">
+      <%= form.color_field :btn_color, class:"form-control color-tab", id:"btn-color-input", onchange:"btnColorLive()" %>
+      <span id="btn-color-output">#000000</span>
+    </div>
+    
+    <%= form.label :border_size %>
+    <%= form.text_field :btn_border_size, class:"form-control" %>
+    
+    <%= form.label :border_type %>
+    <%= form.text_field :btn_border_type, class:"form-control" %>
+    
+    <%= form.label :border_radius %>
+    <div style="display:flex;">
+      <span id="btn-border-radius-output">0</span>
+      <%= form.range_field :bt_border_radius, in: 0..50, step:0.1,id:"btn-border-radius-input", onchange:"btnRadiusLive()" %>
+    </div>
+
+    <%= form.label :border_color %>
+    <div style="display:flex;">
+      <%= form.color_field :btn_border_color, class:"form-control color-tab", id:"btn-border-color-input", onchange:"btnBorderColorLive()" %>
+      <span id="btn-border-color-output">#000000</span>
+    </div>
+
+  </div>
+
+
+  <div class="actions">
+    <%= form.submit "Create", class:"btn btn-lg btn-warning" %>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  function descLive(){
+    let desc_out = document.getElementById("desc-output");
+    let desc = document.getElementById("desc-input").value;
+    desc_out.innerHTML = desc;
+  }
+
+  function btnTextLive(){
+    let btn_text_output = document.getElementById("btn-text-output");
+    let btn_text_input = document.getElementById("btn-text-input").value;
+    btn_text_output.innerHTML = btn_text_input;
+  }
+
+  function bgRadiusLive(){
+    let bg_radius_output = document.getElementById("bg-border-radius-output");
+    let bg_raidus_input = document.getElementById("bg-border-radius-input").value;
+    bg_radius_output.innerHTML = bg_raidus_input;
+  }
+  function bgColorLive(){
+    let bg_color_output = document.getElementById("bg-color-output");
+    let bg_color_input = document.getElementById("bg-color-input").value;
+    let bg_color_live = document.getElementById("bg-color-live");
+    bg_color_output.innerHTML = bg_color_input;
+    bg_color_live.innerHTML = bg_color_input;
+  }
+
+  function bgBorderColorLive(){
+    let bg_border_color_output = document.getElementById("bg-border-color-output");
+    let bg_border_color_input = document.getElementById("bg-border-color-input").value;
+    bg_border_color_output.innerHTML = bg_border_color_input;
+  }
+
+  function btnColorLive(){
+    let btn_color_output = document.getElementById("btn-color-output");
+    let btn_color_input = document.getElementById("btn-color-input").value;
+    btn_color_output.innerHTML = btn_color_input;
+  } 
+
+  function btnRadiusLive(){
+    let btn_radius_output = document.getElementById("btn-border-radius-output");
+    let btn_raidus_input = document.getElementById("btn-border-radius-input").value;
+    btn_radius_output.innerHTML = btn_raidus_input;
+  }
+  
+  function btnBorderColorLive(){
+    let btn_border_color_output = document.getElementById("btn-border-color-output");
+    let btn_border_color_input = document.getElementById("btn-border-color-input").value;
+    btn_border_color_output.innerHTML = btn_border_color_input;
+  }
+</script>

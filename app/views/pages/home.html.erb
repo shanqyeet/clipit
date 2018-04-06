@@ -4,11 +4,11 @@
 <%= p current_user.email %>
 
 <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-
+<%= link_to "Dashboard", user_path(current_user) %>
 <% end %>
 
 
 <h1>Clip It</h1>
-<%= link_to "Sign up", new_user_registration_path %>
+<%= link_to "Sign up", new_user_registration_path, method: :get %>
 <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
 <%= link_to "Sign in with Email", new_user_session_path %>
