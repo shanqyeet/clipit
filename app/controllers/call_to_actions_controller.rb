@@ -69,6 +69,6 @@ class CallToActionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_to_action_params
-      params.fetch(:call_to_action, {})
+      params.require(:call_to_action).permit(:description, :button_text, :button_link, :position, :bg_color, :bg_border_size, :bg_border_type, :bg_border_color, :bg_border_radius, :btn_color, :btn_border_size, :btn_border_type, :btn_border_color, :btn_border_radius, :user_id, :brand_id)
     end
 end

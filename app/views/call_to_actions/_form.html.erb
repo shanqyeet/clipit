@@ -10,17 +10,20 @@
       </ul>
     </div>
   <% end %>
-
  <!-- general customization of CTA -->
+  <% @brand_list = Brand.where(user_id: current_user.id) %> 
   <div class="form-group">
+    <%= form.label :select_brand %>
+    <%= form.select :brand_id, @brand_list.collect {|brand| [brand.name, brand.id] }%> 
+
     <%= form.label :description %>
     <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
 
     <%= form.label :button_text %>
     <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onkeyup:"btnTextLive()" %> 
 
-    <%= form.label :page_link %>
-    <%= form.text_field :page_link,class:"form-control", id:"page-link-input", onchange:"pageLinkLive()" %>
+    <%= form.label :button_link %>
+    <%= form.url_field :button_link,class:"form-control", id:"button-link-input", onchange:"buttonLinkLive()" %>
 
     <%= form.label :position %>
     <%= form.select :position, ["left", "middle", "right"], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
