@@ -1,8 +1,7 @@
-
 function descLive(){
-    let desc_out = document.getElementById("desc-output");
-    let desc = document.getElementById("desc-input").value;
-    desc_out.innerHTML = desc;
+    let desc_output = document.getElementById("desc-output");
+    let desc_input = document.getElementById("desc-input").value;
+    desc_output.innerHTML = desc_input;
   }
 
   function btnTextLive(){
@@ -11,20 +10,20 @@ function descLive(){
     btn_text_output.innerHTML = btn_text_input;
   }
 
-  function pageLinkLive(){
-    let page_link_live = document.getElementById("page-link-live");
-    let page_link_input = document.getElementById("page-link-input").value;
-    page_link_live.href = page_link_input;
+  function buttonLinkLive(){
+    let button_link_live = document.getElementById("button-link-live");
+    let button_link_input = document.getElementById("button-link-input").value;
+    button_link_live.href = button_link_input;
   }
 
   function positionLive(){
     let position_live = document.getElementById("cta-new-live");
-    let page_link_input = document.getElementById("position-input").value;
-    if (page_link_input == "left") {
+    let position_input = document.getElementById("position-input").value;
+    if (position_input == "left") {
       position_live.style.left = "32.5%";
-    } else if (page_link_input == "right") {
+    } else if (position_input == "right") {
       position_live.style.left = "57.5%";
-    } else if (page_link_input == "middle") {
+    } else if (position_input == "middle") {
       position_live.style.left = "45.5%";
     } 
   }

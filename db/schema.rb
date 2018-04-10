@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180406144133) do
+ActiveRecord::Schema.define(version: 20180409173733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180406144133) do
     t.string "btn_border_radius"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "page_link"
+    t.string "button_link"
     t.index ["brand_id"], name: "index_call_to_actions_on_brand_id"
     t.index ["user_id"], name: "index_call_to_actions_on_user_id"
   end
