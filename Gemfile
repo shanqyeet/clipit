@@ -41,6 +41,14 @@ gem 'omniauth-google-oauth2'
 # google login
 gem 'figaro'
 # secrets
+# 
+gem 'carrierwave', '~> 1.0'
+# image uploader 
+gem "mini_magick"
+# Image resizing function 
+gem 'jquery-rails' 
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,7 +1,8 @@
-<h1>New Call To Action</h1>
+
 <div class="cta-new-main">
 
 	<div class="cta-new-left-panel">
+		<h1>New Call To Action</h1>
 		<%= link_to 'Back', user_path(current_user) %>
 		<%= render 'form', call_to_action: @call_to_action %>
 	</div>
@@ -12,15 +13,15 @@
 	<!-- Live display of CTA -->
 		<div class="cta-new-live" id="cta-new-live">
 			<div class="cta-new-live-logo">
-				<h3>Clip It</h3>
+				<%= image_tag("clipit-logo.png", width:"50px", height:"50px", id:"brand-output") %>
 			</div>
 			<div class="cta-new-live-middlebox">
 				<div class="cta-new-live-name">
-					<p>Next Academy</p>
+					<p id="cta-new-live-name">Clip It Today!</p>
 				</div>
 				<div class="cta-new-live-description">
 					<h6><strong id="desc-output">
-						Test writing something here and also something else here until i cannot contain textaaa
+						Create your Call To Action Today! (Psst... max 85 characters only)
 					</strong></h6>
 				</div>
 			</div>

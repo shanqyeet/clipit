@@ -9,6 +9,11 @@
 <div>
 	<% if !@brand_list.nil? %>
 		<% @brand_list.each do |brand| %>
+			<% if brand.logo.file.nil? %>
+			<%= image_tag("clipit-logo.png", width:"50px", height:"50px") %>
+			<% else %>
+			<%= image_tag("#{brand.logo.thumb}") %> 
+			<% end %>
 			<%= brand.name %> 
 			<%= link_to "edit brand", edit_user_brand_path(brand.user_id, brand.id) %>
 		<% end %>
@@ -19,3 +24,53 @@
 <div>
 	<%= link_to "create CTA", new_user_call_to_action_path(current_user) %>
 </div>
+
+
+<div>
+	<h1>List of Call To Actions</h1>
+	<% @cta_list.each do |x| %> 
+		<div>
+			<%= x.brand.name %> 
+			<%= x.description %> 
+		</div>
+	<% end %>
+</div>
+
+<div>
+	<%= form_with url:user_clips_path(current_user) do |form| %>
+	  <% if @clip.errors.any? %>
+	    <div id="error_explanation">
+	      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
+
+	      <ul>
+	      <% @clip.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+		
+	<%= form.hidden_field :user_id, value: current_user.id %>
+    
+    <%= form.label :select_cta %>
+    <%= form.select :call_to_action_id, @cta_list.collect {|cta| [cta.description, cta.id] }%> 
+	
+	<%= form.label :page_link %> 
+    <%= form.url_field :page_link, class:"form-control" %>
+
+	<div class="actions">
+		<%= form.submit %>
+	</div>
+	<% end %>
+</div>
+
+<% if @clip_list.present? %>
+	<% @clip_list.each do |x| %>
+		<div>
+			<%= x.call_to_action.description %>
+			<%= x.page_link %> 
+			<%= x.short_link %>
+			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+		</div>
+	<% end %> 
+<% end %> 

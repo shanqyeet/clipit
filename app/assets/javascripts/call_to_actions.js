@@ -1,3 +1,21 @@
+ $("#brand-input").change(function(){
+      console.log("AJAX ready");
+      $.ajax({
+          url: "/translate?brand_id=" + this.value,
+          method: "post",
+          success: function(data){
+            $("#brand-output")[0].src = data.url
+            $("#cta-new-live-name")[0].innerHTML = data.name
+            console.log(data);
+            console.log("hallo");
+          },
+          error: function(error){
+            console.log("There is an Error!");
+          },
+      }); 
+  });
+
+
 function descLive(){
     let desc_output = document.getElementById("desc-output");
     let desc_input = document.getElementById("desc-input").value;
