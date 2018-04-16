@@ -3,9 +3,11 @@
 	<div>
 		<%= link_to "change password", new_user_password_path %>
 		<%= link_to "create brand", new_user_brand_path(current_user) %>
+		<%= link_to "Archived", user_archived_list_path(current_user) %>
 	</div>
 <% end %>
 
+<!-- Listing of all the brands owned by this user  -->
 <div>
 	<% if !@brand_list.nil? %>
 		<% @brand_list.each do |brand| %>
@@ -26,12 +28,15 @@
 </div>
 
 
+<!-- Listing of all call to actions created -->
 <div>
 	<h1>List of Call To Actions</h1>
 	<% @cta_list.each do |x| %> 
 		<div>
 			<%= x.brand.name %> 
 			<%= x.description %> 
+			<%= x.count %>
+			<%= link_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This is archive all corresponding Clips"} %>
 		</div>
 	<% end %>
 </div>
@@ -64,13 +69,28 @@
 	<% end %>
 </div>
 
+
+<!-- List of Clips  -->
+<h1>List of Active Clips</h1>
 <% if @clip_list.present? %>
 	<% @clip_list.each do |x| %>
 		<div>
 			<%= x.call_to_action.description %>
 			<%= x.page_link %> 
-			<%= x.short_link %>
+			
+			<textarea id="link-source">
+				<%= "http://localhost:3000/" + x.short_link %>
+			</textarea> 
+			<%= x.count %>
+			<%= x.call_to_action.count %>
+				<% if x.call_to_action != 0 && x.count != 0%>
+					<%= ((x.call_to_action.count.to_f.round(4) / x.count.to_f.round(4))*100).to_s + "%" %>
+				<% else %>
+				<%= "not available" %>
+				<% end %> 
+			<button id="copy-to-clip" onclick="copyLink()">Copy</button>
 			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+			<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
 		</div>
 	<% end %> 
 <% end %> 

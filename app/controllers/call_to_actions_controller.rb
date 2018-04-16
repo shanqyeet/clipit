@@ -21,6 +21,24 @@ class CallToActionsController < ApplicationController
   def edit
   end
 
+  def counter       
+    @cta = CallToAction.find(params[:cta_id])
+    @cta.count += 1
+    if @cta.save
+      render json: {response: "Successfully created new count"}
+    else 
+      render json: {response: @cta.errors}
+    end
+  end 
+
+  def archive 
+    @cta = CallToAction.find(params[:id])
+    @cta.archived!
+    @cta_clips = @cta.clips
+    @cta_clips.each {|x| x.archived!}
+    redirect_to request.referrer
+  end 
+
   # POST /call_to_actions
   # POST /call_to_actions.json
   def create

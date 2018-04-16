@@ -4,6 +4,7 @@ class Clip < ApplicationRecord
 	UNIQUE_ID_LENGTH = 7
 	validates :page_link, presence: true, on: :create 
 	before_create :generate_short_url 
+	enum status: {active: 0, archived: 1}
 
 	def generate_short_url 
 		url = ([*('a'..'z'),*('A'..'Z'),*('0'..'9')].sample(UNIQUE_ID_LENGTH)).join

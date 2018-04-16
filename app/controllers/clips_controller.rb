@@ -9,9 +9,14 @@ class ClipsController < ApplicationController
 
   def short
     @clip = Clip.find_by(short_link: params[:short_link])
-
+    @clip.update(count: @clip.count + 1)
   end 
 
+  def archive 
+    @clip = Clip.find(params[:id])
+    @clip.archived!
+    redirect_to request.referrer
+  end 
 
   # GET /clips/1
   # GET /clips/1.json

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410102843) do
+ActiveRecord::Schema.define(version: 20180416084608) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20180410102843) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "button_link"
+    t.integer "count", default: 0
+    t.integer "status", default: 0
     t.index ["brand_id"], name: "index_call_to_actions_on_brand_id"
     t.index ["user_id"], name: "index_call_to_actions_on_user_id"
   end
@@ -54,6 +56,8 @@ ActiveRecord::Schema.define(version: 20180410102843) do
     t.string "short_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "count", default: 0
+    t.integer "status", default: 0
     t.index ["call_to_action_id"], name: "index_clips_on_call_to_action_id"
     t.index ["user_id"], name: "index_clips_on_user_id"
   end

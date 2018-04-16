@@ -1,3 +1,16 @@
+
+function copyLink(){
+
+  let copyLink = document.getElementById("link-source");
+  console.log(copyLink);
+  copyLink.focus();
+  copyLink.select();
+  document.execCommand("Copy");
+  alert("Copied the link: " + copyLink.innerHTML);
+}
+
+// AJAX to update change in brand logo in CTA create form
+
  $("#brand-input").change(function(){
       console.log("AJAX ready");
       $.ajax({
@@ -15,6 +28,26 @@
       }); 
   });
 
+
+// AJAX to update CTA click count
+
+ $("#short-link-page-button").click(function(){
+        console.log("AJAX ready");
+        $.ajax({
+          url:"/counter?cta_id=" + this.value,
+          method: "post",
+          success: function(data){
+            console.log(data.response);
+          },
+          error: function(error){
+            console.log("There is an error adding count!");
+            console.log(error);
+          },
+        });
+ });
+
+ 
+ // Functions for form to create new CTA 
 
 function descLive(){
     let desc_output = document.getElementById("desc-output");
