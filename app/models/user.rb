@@ -5,6 +5,7 @@ class User < ApplicationRecord
 	has_and_belongs_to_many :oauth_credentials
 	has_many :brands
 	has_many :call_to_actions
+	has_many :clips
 
 	def self.from_omniauth(access_token)
 	  data = access_token.info

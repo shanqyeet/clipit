@@ -13,8 +13,10 @@
  <!-- general customization of CTA -->
   <% @brand_list = Brand.where(user_id: current_user.id) %> 
   <div class="form-group">
+    <%= form.hidden_field :user_id, value: current_user.id %>
+    
     <%= form.label :select_brand %>
-    <%= form.select :brand_id, @brand_list.collect {|brand| [brand.name, brand.id] }%> 
+    <%= form.select :brand_id, @brand_list.collect {|brand| [brand.name, brand.id] },{include_blank: true},id:"brand-input"%> 
 
     <%= form.label :description %>
     <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
@@ -42,19 +44,19 @@
     
     <%= form.label :color %>
     <div style="display:flex;"">
-      <%= form.color_field :bg_color, class:"form-control color-tab", id:"bg-color-input", onchange:"bgColorLive()"%>
-      <span id="bg-color-output">#000000</span>      
+      <%= form.color_field :bg_color, class:"form-control color-tab", value:"#ADD8E6", id:"bg-color-input", onchange:"bgColorLive()"%>
+      <span id="bg-color-output">#ADD8E6</span>      
     </div>
 
     <%= form.label :outline_type %>
-    <%= form.select :bg_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {class:"form-control"}, {id:"bg-outline-type-input", onchange:"bgoutlineTypeLive()"} %>
+    <%= form.select :bg_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {include_blank:false},{class:"form-control", id:"bg-outline-type-input", onchange:"bgoutlineTypeLive()"} %>
 
     <%= form.label :outline_size %>
     <%= form.number_field :bg_outline_size, in: 0..20, class:"form-control", id:"bg-outline-size-input", onchange:"bgoutlineSizeLive()" %>
     
     <%= form.label :outline_color %>
     <div style="display:flex;">
-      <%= form.color_field :bg_outline_color, class:"form-control color-tab", id:"bg-outline-color-input", onchange:"bgoutlineColorLive()" %>
+      <%= form.color_field :bg_outline_color, class:"form-control color-tab", value:"#000000", id:"bg-outline-color-input", onchange:"bgoutlineColorLive()" %>
       <span id="bg-outline-color-output">#000000</span>
     </div>
     
@@ -66,8 +68,8 @@
     
     <%= form.label :color %>
     <div style="display:flex;">
-      <%= form.color_field :btn_color, class:"form-control color-tab", id:"btn-color-input", onchange:"btnColorLive()" %>
-      <span id="btn-color-output">#000000</span>
+      <%= form.color_field :btn_color, class:"form-control color-tab", value:"#ff9300", id:"btn-color-input", onchange:"btnColorLive()" %>
+      <span id="btn-color-output">#ff9300</span>
     </div>
     
     <%= form.label :border_radius %>
@@ -77,8 +79,7 @@
     </div>
 
     <%= form.label :outline_type %>
-    <%= form.select :btn_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {class:"form-control"}, {id:"btn-outline-type-input", onchange:"btnoutlineTypeLive()"} %>
-
+    <%= form.select :btn_outline_type, ["none","solid","dotted","dashed","double","groove","ridge","inset","outset"], {include_blank:false},{class:"form-control", id:"btn-outline-type-input", onchange:"btnoutlineTypeLive()"} %>
 
     <%= form.label :outline_size %>
     <%= form.number_field :btn_outline_size, in: 0..20, class:"form-control", id:"btn-outline-size-input", onchange:"btnoutlineSizeLive()" %>
@@ -87,7 +88,7 @@
 
     <%= form.label :outline_color %>
     <div style="display:flex;">
-      <%= form.color_field :btn_outline_color, class:"form-control color-tab", id:"btn-outline-color-input", onchange:"btnoutlineColorLive()" %>
+      <%= form.color_field :btn_outline_color, class:"form-control color-tab", value:"#000000", id:"btn-outline-color-input", onchange:"btnoutlineColorLive()" %>
       <span id="btn-outline-color-output">#000000</span>
     </div>
 

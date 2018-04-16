@@ -21,6 +21,24 @@ class CallToActionsController < ApplicationController
   def edit
   end
 
+  def counter       
+    @cta = CallToAction.find(params[:cta_id])
+    @cta.count += 1
+    if @cta.save
+      render json: {response: "Successfully created new count"}
+    else 
+      render json: {response: @cta.errors}
+    end
+  end 
+
+  def archive 
+    @cta = CallToAction.find(params[:id])
+    @cta.archived!
+    @cta_clips = @cta.clips
+    @cta_clips.each {|x| x.archived!}
+    redirect_to request.referrer
+  end 
+
   # POST /call_to_actions
   # POST /call_to_actions.json
   def create
@@ -28,7 +46,7 @@ class CallToActionsController < ApplicationController
 
     respond_to do |format|
       if @call_to_action.save
-        format.html { redirect_to @call_to_action, notice: 'Call to action was successfully created.' }
+        format.html { redirect_to current_user, notice: 'Call to action was successfully created.' }
         format.json { render :show, status: :created, location: @call_to_action }
       else
         format.html { render :new }
@@ -42,7 +60,7 @@ class CallToActionsController < ApplicationController
   def update
     respond_to do |format|
       if @call_to_action.update(call_to_action_params)
-        format.html { redirect_to @call_to_action, notice: 'Call to action was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Call to action was successfully updated.' }
         format.json { render :show, status: :ok, location: @call_to_action }
       else
         format.html { render :edit }
@@ -69,6 +87,6 @@ class CallToActionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def call_to_action_params
-      params.require(:call_to_action).permit(:description, :button_text, :button_link, :position, :bg_color, :bg_border_size, :bg_border_type, :bg_border_color, :bg_border_radius, :btn_color, :btn_border_size, :btn_border_type, :btn_border_color, :btn_border_radius, :user_id, :brand_id)
+      params.permit(:description, :button_text, :button_link, :position, :bg_color, :bg_border_size, :bg_border_type, :bg_border_color, :bg_border_radius, :btn_color, :btn_border_size, :btn_border_type, :btn_border_color, :btn_border_radius, :user_id, :brand_id)
     end
 end

@@ -1,0 +1,36 @@
+
+<!-- Listing of all call to actions created -->
+<div>
+	<h1>List of Archived Call To Actions</h1>
+	<% @cta_list.each do |x| %> 
+		<div>
+			<%= x.brand.name %> 
+			<%= x.description %> 
+			<%= x.count %>
+		</div>
+	<% end %>
+</div>
+
+<!-- List of Clips  -->
+<h1>List of Archived Clips</h1>
+<% if @clip_list.present? %>
+	<% @clip_list.each do |x| %>
+		<div>
+			<%= x.call_to_action.description %>
+			<%= x.page_link %> 
+			
+			<textarea id="link-source">
+				<%= "http://localhost:3000/" + x.short_link %>
+			</textarea> 
+			<%= x.count %>
+			<%= x.call_to_action.count %>
+				<% if x.call_to_action != 0 && x.count != 0%>
+					<%= ((x.call_to_action.count.to_f.round(4) / x.count.to_f.round(4))*100).to_s + "%" %>
+				<% else %>
+				<%= "not available" %>
+				<% end %> 
+			<button id="copy-to-clip" onclick="copyLink()">Copy</button>
+			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+		</div>
+	<% end %> 
+<% end %> 
