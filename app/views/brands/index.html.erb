@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to "create brand", new_user_brand_path(current_user) %>
 <h1>Brands</h1>
 
 <table>
@@ -27,3 +27,19 @@
 <br>
 
 <%= link_to 'New Brand', new_brand_path %>
+
+<div>
+  <% if !@brand_list.nil? %>
+    <% @brand_list.each do |brand| %>
+      <% if brand.logo.file.nil? %>
+      <%= image_tag("clipit-logo.png", width:"50px", height:"50px") %>
+      <% else %>
+      <%= image_tag("#{brand.logo.thumb}") %> 
+      <% end %>
+      <%= brand.name %> 
+      <%= link_to "edit brand", edit_user_brand_path(brand.user_id, brand.id) %>
+    <% end %>
+  <% end %>
+</div>
+
+

@@ -1,0 +1,14 @@
+<nav class="nav-main">
+	<div class="navbar-logo">
+		<%= link_to image_tag('clipit-logo.png', id:'navbar-logo-img'),'/'%>
+	</div>
+
+	<ul class="navbar-items">
+		<li><%= link_to 'Price', '#' %> </li>
+		<li><%= link_to 'Features', '#' %> </li>
+		<li><%= link_to 'Contacts', '#' %> </li>
+		<li><%= link_to image_tag(current_user.brands.last.logo.thumb), user_path(current_user) %></li>
+		
+	</ul>
+	
+</nav>

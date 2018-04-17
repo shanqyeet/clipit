@@ -15,4 +15,13 @@ class Clip < ApplicationRecord
 			self.short_link = url 
 		end 
 	end 
+
+	def self.total_count 
+		all = self.all
+		count = 0 
+		all.each do |x| 
+			count += x.count 
+		end 
+		return count
+	end
 end
