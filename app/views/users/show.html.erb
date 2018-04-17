@@ -88,7 +88,22 @@
 				<% else %>
 				<%= "not available" %>
 				<% end %> 
+			
+			<a onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%= 'https://www.wikipedia.com' %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+
+			<a onclick="javascript:window.open('https://twitter.com/intent/tweet?text=<%= @user.id %> by @someuser - &amp;url=<%= request.original_url %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+
+			<a onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= request.original_url %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+
+			<a href="https://plus.google.com/share?url=https://www.wikipedia.org" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a>
+
+
 			<button id="copy-to-clip" onclick="copyLink()">Copy</button>
+
+
+
+
+
 			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
 			<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
 		</div>
