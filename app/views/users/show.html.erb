@@ -38,7 +38,7 @@
 		</div>
 		<div>
 			<a href="#">
-				<h3><i class="fas fa-info-circle"></i>&nbspSupport</h3>
+				<h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
 			</a>
 		</div>
 	</div>
@@ -215,6 +215,7 @@
 			<% @count = 0 %>
 			<% if @clip_list.present? %>
 				<% @clip_list.each do |x| %>
+			<div>
 				<div class="dashboard-clip-list row">
 					<div class="col-lg-1" id="dashboard-clip-list-num">
 						<p><%= @count += 1 %></p>
@@ -222,6 +223,9 @@
 					<div class="col-lg-3 dashboard-link-source">
 						<textarea readonly rows="1" id="link-source" class="align-middle"><%= "http://localhost:3000/" + x.short_link %>
 						</textarea> 
+						<a href="" class="click-target">
+							<i class="fas fa-info-circle"></i>
+						</a>
 					</div>	
 					<div class="col-lg-1">
 						<p><%= x.count %></p>
@@ -251,6 +255,35 @@
 						<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
 						<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
 					</div>	
+				</div>
+				<div id="hover-display" class="dashboard-clip-list row">
+					<div id="clip-sub-list-first" class="col-lg-1">
+					</div>
+					<div id="clip-sub-list-second-a" class="col-lg-2">
+						<p>
+							Call To Action
+						</p>
+					</div>
+					<div id="clip-sub-list-second-b" class="col-lg-9">
+						<p>
+							<%= x.call_to_action.description %>
+						</p>
+					</div>
+				</div>
+				<div id="hover-display" class="dashboard-clip-list row">
+					<div id="clip-sub-list-first" class="col-lg-1">
+					</div>
+					<div id="clip-sub-list-second-a" class="col-lg-2">
+						<p>
+							Link to Page
+						</p>
+					</div>
+					<div id="clip-sub-list-second-b" class="col-lg-9">
+						<p>
+							<%= x.page_link %>
+						</p>
+					</div>
+				</div>
 				</div>
 			<% end %>
 			<% end %>

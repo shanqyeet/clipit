@@ -16,7 +16,16 @@
 //= require_tree .
 //
 
-  
+
+$(".click-target").click(function(event){
+	event.preventDefault();
+	if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == ""){
+		$(event.target).closest(".dashboard-clip-list").siblings().css("display","flex");		
+	} else if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == "flex"){
+		$(event.target).closest(".dashboard-clip-list").siblings().css("display","");
+	}
+});
+
 //   alert("test");
 
 // function descLive(){
