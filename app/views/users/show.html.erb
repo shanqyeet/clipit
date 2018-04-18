@@ -89,8 +89,8 @@
 			</div>
 		</div>
 
-		<!-- Listing of all the brands owned by this user  -->
-		<section>
+		<!-- Listing of all the CTA owned by this user  -->
+		<section class="cta-section">
 			
 			<!-- title and create button -->
 			<div class="dashboard-cta-title">
@@ -151,75 +151,114 @@
 		</section>
 
 		<!-- end of CTA list -->
+
+
+		<!-- Listing of all the Clips owned by this user  -->
+		<section class="clip-section">
+			
+			<!-- title and create button -->
+			<div class="dashboard-clip-title">
+				<div  class="col-lg-3" id="dashboard-clip-title-text" style="width:80%">
+					<h3>Active Clips</h3>
+				</div>
+				
+				<div class="col-lg-9" id="dashboard-clip-title-form">
+					<%= form_with url:user_clips_path(current_user) do |form| %>
+					  <% if @clip.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
+
+					      <ul>
+					      <% @clip.errors.full_messages.each do |message| %>
+					        <li><%= message %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+						
+					<%= form.hidden_field :user_id, value: current_user.id %>
+				    
+				    <%= form.label :select_cta %>
+				    <%= form.select :call_to_action_id, @cta_list.collect {|cta| [cta.description, cta.id] }, {}, id:"dashboard-clip-form-select"%> 
+					
+					<%= form.label :page_link %> 
+				    <%= form.url_field :page_link, class:"form-control", id:"dashboard-clip-form-link" %>
+
+					<div class="actions">
+						<%= form.submit "Create Clip", class:"btn btn-primary" %>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- headings of the Clip list  -->
+
+			<div class="dashboard-cta-headers row">
+				<div class="col-lg-1">
+				</div>	
+				<div class="col-lg-3">
+					<p>Short Link</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Visist</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clicks</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Conversion</p>
+				</div>	
+				<div class="col-lg-5">
+				</div>	
+			</div>
+			<!-- Listing of all Clips created -->
+			<% @count = 0 %>
+			<% if @clip_list.present? %>
+				<% @clip_list.each do |x| %>
+				<div class="dashboard-clip-list row">
+					<div class="col-lg-1" id="dashboard-clip-list-num">
+						<p><%= @count += 1 %></p>
+					</div>		
+					<div class="col-lg-3 dashboard-link-source">
+						<textarea readonly rows="1" id="link-source" class="align-middle"><%= "http://localhost:3000/" + x.short_link %>
+						</textarea> 
+					</div>	
+					<div class="col-lg-1">
+						<p><%= x.count %></p>
+					</div>	
+					<div class="col-lg-1">
+						<p>Clicks</p>
+					</div>	
+					<div class="col-lg-1">
+						<p>
+						<% if x.call_to_action != 0 && x.count != 0%>
+							<%= ((x.call_to_action.count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+						<% else %>
+							<%= "N/A" %>
+						<% end %> 
+						</p>
+					</div>	
+					<div class="col-lg-5" id="dashboard-clip-list-buttons">
+						<a href="" onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+						
+						<a href="" onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+						
+						<a href="" onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+						
+						<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a>
+						
+						<a href="" id="copy-to-clip" onclick="copyLink()"><i class="fas fa-copy"></i></a>
+						<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+						<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
+					</div>	
+				</div>
+			<% end %>
+			<% end %>
+		</section>
+
+		<!-- end of Clip list -->
+
+
+
 	</div>
 </section>
-
-
-<div>
-	<%= form_with url:user_clips_path(current_user) do |form| %>
-	  <% if @clip.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
-
-	      <ul>
-	      <% @clip.errors.full_messages.each do |message| %>
-	        <li><%= message %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-		
-	<%= form.hidden_field :user_id, value: current_user.id %>
-    
-    <%= form.label :select_cta %>
-    <%= form.select :call_to_action_id, @cta_list.collect {|cta| [cta.description, cta.id] }%> 
-	
-	<%= form.label :page_link %> 
-    <%= form.url_field :page_link, class:"form-control" %>
-
-	<div class="actions">
-		<%= form.submit %>
-	</div>
-	<% end %>
-</div>
-
-
-<!-- List of Clips  -->
-<h1>List of Active Clips</h1>
-<% if @clip_list.present? %>
-	<% @clip_list.each do |x| %>
-		<div>
-			<%= x.call_to_action.description %>
-			<%= x.page_link %> 
-			
-			<textarea id="link-source">
-				<%= "http://localhost:3000/" + x.short_link %>
-			</textarea> 
-			<%= x.count %>
-			<%= x.call_to_action.count %>
-				<% if x.call_to_action != 0 && x.count != 0%>
-					<%= ((x.call_to_action.count.to_f.round(4) / x.count.to_f.round(4))*100).to_s + "%" %>
-				<% else %>
-				<%= "not available" %>
-				<% end %> 
-			
-			<a onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-
-			<a onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-
-			<a onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-
-			<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a>
-
-
-			<button id="copy-to-clip" onclick="copyLink()"><i class="fas fa-copy"></i></button>
-
-
-
-
-
-			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
-			<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
-		</div>
-	<% end %> 
-<% end %> 
