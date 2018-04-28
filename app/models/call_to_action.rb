@@ -1,8 +1,8 @@
 class CallToAction < ApplicationRecord
 	belongs_to :user
 	belongs_to :brand
-	has_many :clips
-	has_many :cta_counts
+	has_many :clips, dependent: :destroy
+	has_many :cta_counts, dependent: :destroy
 	enum status: {active: 0, archived: 1}
 
 

@@ -19,5 +19,5 @@ class UsersController < ApplicationController
 		@brand_list = @user.brands 
 		@cta_list = @user.call_to_actions.where(status: 1)
 		@clip_list = @user.clips.where(status: 1)
-	end 
+	end  
 end

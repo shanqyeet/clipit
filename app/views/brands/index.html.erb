@@ -1,45 +1,72 @@
-<p id="notice"><%= notice %></p>
-<%= link_to "create brand", new_user_brand_path(current_user) %>
-<h1>Brands</h1>
+<section class="dashboard-main">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Logo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<!-- Dashboard left panel -->
 
-  <tbody>
-    <% @brands.each do |brand| %>
-      <tr>
-        <td><%= brand.name %></td>
-        <td><%= brand.logo %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="dashboard-sub-left container">
+    <a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
+    <div>
+      <h3><i class="fas fa-edit"></i>&nbspManage</h3>
+      <div class="dashboard-sub-left-menu">
+        <div>
+          <a href="#">
+            <h4><i class="fas fa-caret-right"></i>&nbspBrand</h4>
+          </a>
+          
+        </div>
+        <div>
+          <a href="<%= user_archived_list_path(current_user)%>">
+            <h4><i class="fas fa-caret-right"></i>&nbspArchives</h4>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
+      <div class="dashboard-sub-left-menu">
+        <div>
+          <a href="#">
+            <h4><i class="fas fa-caret-right"></i>&nbspProfile</h4>
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <h4><i class="fas fa-caret-right"></i>&nbspSubscription</h4>
+          </a>
+        </div>
+      </div>
 
-<br>
+    </div>
+    <div>
+      <a href="#">
+        <h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
+      </a>
+    </div>
+  </div>
 
-<%= link_to 'New Brand', new_brand_path %>
+<!-- Dash bord right panel -->
 
-<div>
-  <% if !@brand_list.nil? %>
-    <% @brand_list.each do |brand| %>
-      <% if brand.logo.file.nil? %>
-      <%= image_tag("clipit-logo.png", width:"50px", height:"50px") %>
-      <% else %>
-      <%= image_tag("#{brand.logo.thumb}") %> 
-      <% end %>
-      <%= brand.name %> 
-      <%= link_to "edit brand", edit_user_brand_path(brand.user_id, brand.id) %>
-    <% end %>
-  <% end %>
-</div>
+  <div class="dashboard-sub-right">
+      <h1>Manage Brands</h1>
+      <%= button_to "Create Brand", new_user_brand_path(current_user.id), class:"btn btn-lg btn-primary", method: :get %>      
+    <section class="brands-list">
+      <div class="row">
+        <% @brands.each do |brand| %>
+         <div class="brand-item col-lg-3">
+            <% if brand.logo.file.nil? %>
+              <%= image_tag("clipit-logo.png", width:"200px", height:"200px")%>
+            <% else %>
+              <img src=<%= brand.logo %> alt="" width="200px" height="200px">
+            <% end %>
+            <h5><%= brand.name %></h5>
+            <div class="brand-items-edits">
+            <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success" %>
+            <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"} %>
+              
+            </div>
+         </div>
+        <% end %>
+      </div>
+    </section>
 
-
+  </div>
+</section>
