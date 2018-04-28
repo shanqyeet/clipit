@@ -24,8 +24,8 @@
       <h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
       <div class="dashboard-sub-left-menu">
         <div>
-          <a href="#">
-            <h4><i class="fas fa-caret-right"></i>&nbspProfile</h4>
+          <a href=<%=edit_user_registration_path%>>
+            <h4><i class="fas fa-caret-right"></i>&nbspManage password</h4>
           </a>
         </div>
         <div>
@@ -47,7 +47,8 @@
 
   <div class="dashboard-sub-right">
       <h1>Manage Brands</h1>
-      <%= button_to "Create Brand", new_user_brand_path(current_user.id), class:"btn btn-lg btn-primary", method: :get %>      
+      <%= button_to "Create Brand", new_user_brand_path(current_user.id), class:"btn btn-lg btn-primary", method: :get %>
+
     <section class="brands-list">
       <div class="row">
         <% @brands.each do |brand| %>
@@ -59,8 +60,8 @@
             <% end %>
             <h5><%= brand.name %></h5>
             <div class="brand-items-edits">
-            <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success" %>
-            <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"} %>
+            <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success", method: :get %>
+            <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"}, method: :get %>
               
             </div>
          </div>
