@@ -41,6 +41,19 @@ $(".clip-buttons").click(function(event){
 	console.log("Clip Buttons: Prevented Default");
 });
 
+
+$(".archived-cta-message").hover(function(event){
+	console.log(event.target);
+	$(event.target).closest(".archived-cta-message-container").find(".pop-up-cta-message").fadeToggle();
+});
+
+$(".archived-page-link").hover(function(event){
+	$(event.target).closest(".archived-page-link-container").find(".pop-up-page-link").fadeToggle();
+});
+
+
+
+
 //   alert("test");
 
 // function descLive(){

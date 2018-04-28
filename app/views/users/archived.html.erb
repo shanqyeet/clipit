@@ -1,36 +1,221 @@
+<section class="dashboard-main">
 
-<!-- Listing of all call to actions created -->
-<div>
-	<h1>List of Archived Call To Actions</h1>
-	<% @cta_list.each do |x| %> 
+<!-- Dashboard left panel -->
+
+	<div class="dashboard-sub-left container">
+		<a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
 		<div>
-			<%= x.brand.name %> 
-			<%= x.description %> 
-			<%= x.count %>
+			<h3><i class="fas fa-edit"></i>&nbspManage</h3>
+			<div class="dashboard-sub-left-menu">
+				<div>
+					<a href="#">
+						<h4><i class="fas fa-caret-right"></i>&nbspBrand</h4>
+					</a>
+					
+				</div>
+				<div>
+					<a href="<%= user_archived_list_path(current_user)%>">
+						<h4><i class="fas fa-caret-right"></i>&nbspArchives</h4>
+					</a>
+				</div>
+			</div>
 		</div>
-	<% end %>
-</div>
-
-<!-- List of Clips  -->
-<h1>List of Archived Clips</h1>
-<% if @clip_list.present? %>
-	<% @clip_list.each do |x| %>
 		<div>
-			<%= x.call_to_action.description %>
-			<%= x.page_link %> 
+			<h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
+			<div class="dashboard-sub-left-menu">
+				<div>
+					<a href="#">
+						<h4><i class="fas fa-caret-right"></i>&nbspProfile</h4>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<h4><i class="fas fa-caret-right"></i>&nbspSubscription</h4>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<div>
+			<a href="#">
+				<h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
+			</a>
+		</div>
+	</div>
+
+<!-- Dash bord right panel -->
+
+	<div class="dashboard-sub-right">
+		<!-- Listing of all the CTA owned by this user  -->
+		<section class="cta-section">
 			
-			<textarea id="link-source">
-				<%= "http://localhost:3000/" + x.short_link %>
-			</textarea> 
-			<%= x.count %>
-			<%= x.call_to_action.count %>
-				<% if x.call_to_action != 0 && x.count != 0%>
-					<%= ((x.call_to_action.count.to_f.round(4) / x.count.to_f.round(4))*100).to_s + "%" %>
-				<% else %>
-				<%= "not available" %>
-				<% end %> 
-			<button id="copy-to-clip" onclick="copyLink()">Copy</button>
-			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
-		</div>
-	<% end %> 
-<% end %> 
+			<!-- title and create button -->
+			<div class="dashboard-cta-title">
+				<div id="dashboard-cta-title-text" style="width:80%">
+					<h3>Archived Call To Actions</h3>
+				</div>
+			</div>
+
+			<!-- headings of the list  -->
+
+			<div class="dashboard-cta-headers row">
+				<div class="col-lg-1">
+				</div>	
+				<div class="col-lg-2">
+					<p>Brand</p>
+				</div>
+				<div class="col-lg-5">
+					<p>CTA Message</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clips</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clicks</p>
+				</div>	
+				<div class="col-lg-2">
+				</div>	
+			</div>
+			<!-- Listing of all call to actions created -->
+			<% @count = 0 %>
+			<% @cta_list.each do |x| %> 
+				<div class="dashboard-cta-list row">
+					<div class="col-lg-1" id="dashboard-cta-list-num">
+						<p><%= @count += 1 %></p>
+					</div>	
+					<div class="col-lg-2">
+						<p><%= x.brand.name %></p>
+					</div>
+					<div class="col-lg-5">
+						<p><%= x.description.truncate(40) %></p>
+					</div>	
+					<div class="col-lg-1">
+						<p><%= x.clips.count %></p>
+					</div>	
+					<div class="col-lg-1">
+						<p><%= x.count %></p>
+					</div>	
+				</div>
+			<% end %>
+		</section>
+
+		<!-- end of CTA list -->
+
+
+		<!-- Listing of all the Clips owned by this user  -->
+		<section class="clip-section">
+			
+			<!-- title and create button -->
+			<div class="dashboard-clip-title">
+				<div  class="col-lg-3" id="dashboard-clip-title-text" style="width:80%">
+					<h3>Archived Clips</h3>
+				</div>
+				
+				<div class="col-lg-9" id="dashboard-clip-title-form">
+				</div>
+			</div>
+
+			<!-- headings of the Clip list  -->
+
+			<div class="dashboard-cta-headers row">
+				<div class="col-lg-1">
+				</div>	
+				<div class="col-lg-4">
+					<p>CTA Message</p>
+				</div>	
+				<div class="col-lg-3">
+					<p>Page Link</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Visits</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clicks</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Conversion</p>
+				</div>	
+				<div class="col-lg-1">
+				</div>	
+			</div>
+			<!-- Listing of all Clips created -->
+			<% @count = 0 %>
+			<% if @clip_list.present? %>
+				<% @clip_list.each do |x| %>
+			<div>
+				<div class="dashboard-clip-list row">
+					<div class="col-lg-1" id="dashboard-clip-list-num">
+						<p><%= @count += 1 %></p>
+					</div>		
+					<div class="col-lg-4 archived-cta-message-container">
+						<p class="archived-cta-message">
+							<%= x.call_to_action.description.truncate(30) %>
+						</p>
+						<p class="pop-up-cta-message">
+							<%= x.call_to_action.description %>
+						</p>							
+					</div>
+					<div class="col-lg-3 archived-page-link-container">
+						<p class="archived-page-link">
+							<%= x.page_link.truncate(25) %>
+						</p>
+						<p class="pop-up-page-link">
+							<%= x.page_link %>
+						</p>	
+					</div>
+					<div class="col-lg-1">
+						<p><%= x.count %></p>
+					</div>	
+					<div class="col-lg-1">
+						<p>Clicks</p>
+					</div>	
+					<div class="col-lg-1">
+						<p>
+						<% if x.call_to_action != 0 && x.count != 0%>
+							<%= ((x.call_to_action.count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+						<% else %>
+							<%= "N/A" %>
+						<% end %> 
+						</p>
+					</div>	
+					<div class="col-lg-1" id="dashboard-clip-list-buttons">
+						<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+					</div>	
+				</div>
+				<div id="hover-display" class="dashboard-clip-list row">
+					<div id="clip-sub-list-first" class="col-lg-1">
+					</div>
+					<div id="clip-sub-list-second-a" class="col-lg-2">
+						<p>
+							Call To Action
+						</p>
+					</div>
+					<div id="clip-sub-list-second-b" class="col-lg-9">
+						<p>
+							<%= x.call_to_action.description %>
+						</p>
+					</div>
+				</div>
+				<div id="hover-display" class="dashboard-clip-list row">
+					<div id="clip-sub-list-first" class="col-lg-1">
+					</div>
+					<div id="clip-sub-list-second-a" class="col-lg-2">
+						<p>
+							Link to Page
+						</p>
+					</div>
+					<div id="clip-sub-list-second-b" class="col-lg-9">
+						<p>
+							<%= x.page_link %>
+						</p>
+					</div>
+				</div>
+				</div>
+			<% end %>
+			<% end %>
+		</section>
+
+		<!-- end of Clip list -->
+
+	</div>
+</section>
