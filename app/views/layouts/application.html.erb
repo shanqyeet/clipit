@@ -13,7 +13,7 @@
   </head>
 
   <body>
-    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/navbar' unless @client_display %>
     <% if notice.present? or alert.present? %>
   	<p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

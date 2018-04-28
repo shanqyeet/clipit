@@ -26,6 +26,21 @@ $(".click-target").click(function(event){
 	}
 });
 
+$(".copy-to-clip").click(function(event){
+  event.preventDefault();
+  let copyLink = $(event.target).closest(".dashboard-clip-list").find("#link-source")[0];
+  console.log(copyLink);
+  copyLink.focus();
+  copyLink.select();
+  document.execCommand("Copy");
+  alert("Copied the link: " + copyLink.innerHTML);
+});
+
+$(".clip-buttons").click(function(event){
+	event.preventDefault();
+	console.log("Clip Buttons: Prevented Default");
+});
+
 //   alert("test");
 
 // function descLive(){

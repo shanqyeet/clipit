@@ -1,14 +1,3 @@
-
-function copyLink(){
-
-  let copyLink = document.getElementById("link-source");
-  console.log(copyLink);
-  copyLink.focus();
-  copyLink.select();
-  document.execCommand("Copy");
-  alert("Copied the link: " + copyLink.innerHTML);
-}
-
 // AJAX to update change in brand logo in CTA create form
 
  $("#brand-input").change(function(){

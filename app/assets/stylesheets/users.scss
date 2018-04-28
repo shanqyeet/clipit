@@ -104,6 +104,12 @@
 	background-color: #ECEFF2;
 	margin: 10px 0; 
 	height: 50px;
+	transition: 0.3s;
+}
+
+.dashboard-cta-list:hover {
+	transform: translate(0, -5px);
+	transition: 0.25s;
 }
 
 .dashboard-cta-list div p {
@@ -177,7 +183,14 @@
 	background-color: #FCECED;
 	margin: 10px 0; 
 	height: 50px;
+	transition: 0.3s;
 }
+
+.dashboard-clip-list:hover {
+	transform: translate(0, -5px);
+}
+
+
 
 #dashboard-clip-list-num {
 	padding:0;

@@ -1,31 +1,37 @@
 <iframe src="<%=@clip.page_link%>" width="100%" height="100%" frameborder="0"></iframe>
 
 <!-- Live display of CTA -->
-<div class="cta-new-live" style="background-color: <%= @clip.call_to_action.bg_color %>; border-radius: <%= @clip.call_to_action.bg_border_radius  + "px" %>; border-style: <%= @clip.call_to_action.bg_border_type %> ; border-width:<%= @clip.call_to_action.bg_border_size %> ; border-color: <%= @clip.call_to_action.bg_border_color %>;" >
-	<div class="cta-new-live-logo">
-		<%= image_tag(@clip.call_to_action.brand.logo) %> 
-	</div>
-	<div class="cta-new-live-middlebox">
-		<div class="cta-new-live-name">
-			<p><%= @clip.call_to_action.brand.name %></p>
+<div id="cta-container" style="justify-content: <%= @clip.call_to_action.position %>; width: 100%;">
+	<div class="cta-new-live" style="background-color: <%= @clip.call_to_action.bg_color %>; border-radius: <%= @clip.call_to_action.bg_border_radius  + "px" %>; border-style: <%= @clip.call_to_action.bg_border_type %> ; border-width:<%= @clip.call_to_action.bg_border_size %> ; border-color: <%= @clip.call_to_action.bg_border_color %>;" >
+		<div class="cta-new-live-logo">
+			<% if @clip.call_to_action.brand.logo.file.nil? %> 
+				<%= image_tag("clipit-logo.png", width:"50px", height:"50px", id:"brand-output") %>
+			<% else %>
+				<%= image_tag(@clip.call_to_action.brand.logo) %> 
+			<% end %>
 		</div>
-		<div class="cta-new-live-description">
-			<h6><strong>
-				<%= @clip.call_to_action.description %>
-			</strong></h6>
+		<div class="cta-new-live-middlebox">
+			<div class="cta-new-live-name">
+				<p><%= @clip.call_to_action.brand.name %></p>
+			</div>
+			<div class="cta-new-live-description">
+				<h6><strong>
+					<%= @clip.call_to_action.description %>
+				</strong></h6>
+			</div>
 		</div>
-	</div>
-	<div class="cta-new-live-endbox">
-		<div class="cta-new-live-close">
-			<a href="<%=@clip.page_link%>">
-				<p>X</p>
-			</a>
-		</div>
-		<div class="cta-new-live-button">
-			<a href=<%="#{@clip.call_to_action.button_link}"%> target="_blank" >
-				<button class="btn" style="background-color: <%= @clip.call_to_action.btn_color %>; border-radius: <%= @clip.call_to_action.btn_border_radius  + "px" %>; border-style: <%= @clip.call_to_action.btn_border_type %> ; border-width:<%= @clip.call_to_action.btn_border_size %> ; border-color: <%= @clip.call_to_action.btn_border_color %>;"><%=@clip.call_to_action.button_text%>
-				</button>
-			</a>
+		<div class="cta-new-live-endbox">
+			<div class="cta-new-live-close">
+				<a href="<%=@clip.page_link%>">
+					<p>X</p>
+				</a>
+			</div>
+			<div class="cta-new-live-button">
+				<a href=<%="#{@clip.call_to_action.button_link}"%> target="_blank" >
+					<button class="btn" style="background-color: <%= @clip.call_to_action.btn_color %>; border-radius: <%= @clip.call_to_action.btn_border_radius  + "px" %>; border-style: <%= @clip.call_to_action.btn_border_type %> ; border-width:<%= @clip.call_to_action.btn_border_size %> ; border-color: <%= @clip.call_to_action.btn_border_color %>;"><%=@clip.call_to_action.button_text%>
+					</button>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>

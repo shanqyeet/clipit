@@ -135,7 +135,7 @@
 						<p><%= x.brand.name %></p>
 					</div>
 					<div class="col-lg-5">
-						<p><%= x.description %></p>
+						<p><%= x.description.truncate(40) %></p>
 					</div>	
 					<div class="col-lg-1">
 						<p><%= x.clips.count %></p>
@@ -243,17 +243,18 @@
 						</p>
 					</div>	
 					<div class="col-lg-5" id="dashboard-clip-list-buttons">
-						<a href="" onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+						<a class="clip-buttons" href="" onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-facebook" aria-hidden="true"></i></a>
 						
-						<a href="" onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+						<a class="clip-buttons" href="" onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-twitter" aria-hidden="true"></i></a>
 						
-						<a href="" onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+						<a class="clip-buttons" href="" onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-linkedin" aria-hidden="true"></i></a>
 						
-						<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fab fa-google-plus-square" aria-hidden="true"></i></a>
+						<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" data-turbolink-eval=false><i class="fab fa-google-plus-square" aria-hidden="true" ></i></a>
 						
-						<a href="" id="copy-to-clip" onclick="copyLink()"><i class="fas fa-copy"></i></a>
+						<a href="" class="copy-to-clip"><i class="fas fa-copy" data-turbolink-eval=false></i></a>
 						<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
-						<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
+
+						<%= button_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post, class:"btn btn-warning" %>
 					</div>	
 				</div>
 				<div id="hover-display" class="dashboard-clip-list row">
