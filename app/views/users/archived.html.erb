@@ -93,7 +93,7 @@
 						<p><%= x.clips.count %></p>
 					</div>	
 					<div class="col-lg-1">
-						<p><%= x.count %></p>
+						<p><%= x.cta_counts.count %></p>
 					</div>	
 				</div>
 			<% end %>
@@ -167,12 +167,12 @@
 						<p><%= x.count %></p>
 					</div>	
 					<div class="col-lg-1">
-						<p>Clicks</p>
+						<p><%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p></p>
 					</div>	
 					<div class="col-lg-1">
 						<p>
 						<% if x.call_to_action != 0 && x.count != 0%>
-							<%= ((x.call_to_action.count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+							<%= ((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
 						<% else %>
 							<%= "N/A" %>
 						<% end %> 

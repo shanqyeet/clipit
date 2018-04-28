@@ -23,7 +23,7 @@
  $("#short-link-page-button").click(function(){
         console.log("AJAX ready");
         $.ajax({
-          url:"/counter?cta_id=" + this.value,
+          url:"/counter?cta_count=" + window.location.pathname + " " + this.value.toString(),
           method: "post",
           success: function(data){
             console.log(data.response);

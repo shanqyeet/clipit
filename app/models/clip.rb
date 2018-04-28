@@ -1,6 +1,7 @@
 class Clip < ApplicationRecord
 	belongs_to :call_to_action
 	belongs_to :user
+	has_many :cta_counts
 	UNIQUE_ID_LENGTH = 7
 	validates :page_link, presence: true, on: :create 
 	before_create :generate_short_url 

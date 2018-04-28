@@ -2,6 +2,7 @@ class CallToAction < ApplicationRecord
 	belongs_to :user
 	belongs_to :brand
 	has_many :clips
+	has_many :cta_counts
 	enum status: {active: 0, archived: 1}
 
 

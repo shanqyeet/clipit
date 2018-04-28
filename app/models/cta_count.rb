@@ -1,0 +1,2 @@
+class CtaCount < ApplicationRecord
+end
