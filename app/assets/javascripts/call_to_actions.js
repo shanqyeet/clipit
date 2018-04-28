@@ -68,14 +68,14 @@ function descLive(){
   }
 
   function positionLive(){
-    let position_live = document.getElementById("cta-new-live");
+    let position_live = document.getElementById("cta-container");
     let position_input = document.getElementById("position-input").value;
     if (position_input == "left") {
-      position_live.style.left = "32.5%";
+      position_live.style.justifyContent = "flex-start";
     } else if (position_input == "right") {
-      position_live.style.left = "57.5%";
+      position_live.style.justifyContent = "flex-end";
     } else if (position_input == "middle") {
-      position_live.style.left = "45.5%";
+      position_live.style.justifyContent = "center";
     } 
   }
 

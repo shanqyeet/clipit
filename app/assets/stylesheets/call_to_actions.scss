@@ -32,12 +32,19 @@
 }
 
 // Live Display of Call To Action 
+#cta-container {
+	width: 70%;
+	position: fixed;
+	bottom: 0%;
+	height: 150px;
+	padding: 25px;
+	display: flex;
+	justify: flex-start;
+}
+
 .cta-new-live {
 	display: flex;
-	position: fixed;
 	z-index: 1;
-	bottom: 5%;
-	left: 32.5%;
 	background-color: #ADD8E6;
 	width: 565px;
 	height: 100px;
