@@ -41,3 +41,60 @@
 .brand-items-edits input {
 	margin: 0 5px;
 }
+
+// new brand form 
+
+.new-brand-form {
+	width: max-content;
+	position: fixed;
+	z-index: 99;
+	background-color: white;
+	box-shadow: 5px 5px 10px black;
+	border-radius: 10px;
+	left: 50%;
+	top: 25%;
+	transform: translate(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.new-brand-form-title {
+	text-align: center;
+	background-color: #F7EBC9;
+	height: 30%;
+	width: 100%;
+	padding: 15px;
+	color: #474741;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.close-button-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#close-button {
+	transition: 0.5s;
+}
+
+#close-button:hover {
+	transform: scale(1.5);
+	transition: 0.5s;
+	color: inherit;
+}
+
+.new-brand-form-form {
+	padding: 25px;
+}
+
+.form-lightbox {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	z-index: 90;
+	background-color: rgba(45, 45, 45, 0.8);
+	display: none;
+}

@@ -2,9 +2,11 @@
 
 <!-- Dashboard left panel -->
 
-	<div class="dashboard-sub-left container">
-		<a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
-		<div>
+	<div class="dashboard-sub-left">
+		<div class="dashboard-title">
+			<a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
+		</div>
+		<div class="dashboard-sub-left-menu-container">
 			<h3><i class="fas fa-edit"></i>&nbspManage</h3>
 			<div class="dashboard-sub-left-menu">
 				<div>
@@ -20,11 +22,11 @@
 				</div>
 			</div>
 		</div>
-		<div>
+		<div class="dashboard-sub-left-menu-container">
 			<h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
 			<div class="dashboard-sub-left-menu">
 				<div>
-					<a href=<%=edit_user_registration_path%>>
+					<a href=<%=edit_user_registration_path %>>
 						<h4><i class="fas fa-caret-right"></i>&nbspManage Password</h4>
 					</a>
 				</div>
@@ -36,12 +38,13 @@
 			</div>
 
 		</div>
-		<div>
+		<div class="dashboard-sub-left-menu-container dashboard-question">
 			<a href="#">
 				<h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
 			</a>
 		</div>
 	</div>
+
 
 <!-- Dash bord right panel -->
 
@@ -77,25 +80,29 @@
 				</div>	
 			</div>
 			<!-- Listing of all call to actions created -->
-			<% @count = 0 %>
-			<% @cta_list.each do |x| %> 
-				<div class="dashboard-cta-list row">
-					<div class="col-lg-1" id="dashboard-cta-list-num">
-						<p><%= @count += 1 %></p>
-					</div>	
-					<div class="col-lg-2">
-						<p><%= x.brand.name %></p>
+			<% if @cta_list.present? %>
+				<% @count = 0 %>
+				<% @cta_list.each do |x| %> 
+					<div class="dashboard-cta-list row">
+						<div class="col-lg-1" id="dashboard-cta-list-num">
+							<p><%= @count += 1 %></p>
+						</div>	
+						<div class="col-lg-2">
+							<p><%= x.brand.name %></p>
+						</div>
+						<div class="col-lg-5">
+							<p><%= x.description.truncate(40) %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.clips.count %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.cta_counts.count %></p>
+						</div>	
 					</div>
-					<div class="col-lg-5">
-						<p><%= x.description.truncate(40) %></p>
-					</div>	
-					<div class="col-lg-1">
-						<p><%= x.clips.count %></p>
-					</div>	
-					<div class="col-lg-1">
-						<p><%= x.cta_counts.count %></p>
-					</div>	
-				</div>
+				<% end %>
+			<% else %>
+				<h6 class="no-item-message">Nope, you have not archived any CTA so far.</h6>
 			<% end %>
 		</section>
 
@@ -142,76 +149,79 @@
 			<% @count = 0 %>
 			<% if @clip_list.present? %>
 				<% @clip_list.each do |x| %>
-			<div>
-				<div class="dashboard-clip-list row">
-					<div class="col-lg-1" id="dashboard-clip-list-num">
-						<p><%= @count += 1 %></p>
-					</div>		
-					<div class="col-lg-4 archived-cta-message-container">
-						<p class="archived-cta-message">
-							<%= x.call_to_action.description.truncate(30) %>
-						</p>
-						<p class="pop-up-cta-message">
-							<%= x.call_to_action.description %>
-						</p>							
+				<div>
+					<div class="dashboard-clip-list row">
+						<div class="col-lg-1" id="dashboard-clip-list-num">
+							<p><%= @count += 1 %></p>
+						</div>		
+						<div class="col-lg-4 archived-cta-message-container">
+							<p class="archived-cta-message">
+								<%= x.call_to_action.description.truncate(30) %>
+							</p>
+							<p class="pop-up-cta-message">
+								<%= x.call_to_action.description %>
+							</p>							
+						</div>
+						<div class="col-lg-3 archived-page-link-container">
+							<p class="archived-page-link">
+								<%= x.page_link.truncate(25) %>
+							</p>
+							<p class="pop-up-page-link">
+								<%= x.page_link %>
+							</p>	
+						</div>
+						<div class="col-lg-1">
+							<p><%= x.count %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p></p>
+						</div>	
+						<div class="col-lg-1">
+							<p>
+							<% if x.call_to_action != 0 && x.count != 0%>
+								<%= ((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+							<% else %>
+								<%= "N/A" %>
+							<% end %> 
+							</p>
+						</div>	
+						<div class="col-lg-1" id="dashboard-clip-list-buttons">
+							<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+						</div>	
 					</div>
-					<div class="col-lg-3 archived-page-link-container">
-						<p class="archived-page-link">
-							<%= x.page_link.truncate(25) %>
-						</p>
-						<p class="pop-up-page-link">
-							<%= x.page_link %>
-						</p>	
+					<div id="hover-display" class="dashboard-clip-list row">
+						<div id="clip-sub-list-first" class="col-lg-1">
+						</div>
+						<div id="clip-sub-list-second-a" class="col-lg-2">
+							<p>
+								Call To Action
+							</p>
+						</div>
+						<div id="clip-sub-list-second-b" class="col-lg-9">
+							<p>
+								<%= x.call_to_action.description %>
+							</p>
+						</div>
 					</div>
-					<div class="col-lg-1">
-						<p><%= x.count %></p>
-					</div>	
-					<div class="col-lg-1">
-						<p><%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p></p>
-					</div>	
-					<div class="col-lg-1">
-						<p>
-						<% if x.call_to_action != 0 && x.count != 0%>
-							<%= ((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
-						<% else %>
-							<%= "N/A" %>
-						<% end %> 
-						</p>
-					</div>	
-					<div class="col-lg-1" id="dashboard-clip-list-buttons">
-						<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
-					</div>	
-				</div>
-				<div id="hover-display" class="dashboard-clip-list row">
-					<div id="clip-sub-list-first" class="col-lg-1">
+					<div id="hover-display" class="dashboard-clip-list row">
+						<div id="clip-sub-list-first" class="col-lg-1">
+						</div>
+						<div id="clip-sub-list-second-a" class="col-lg-2">
+							<p>
+								Link to Page
+							</p>
+						</div>
+						<div id="clip-sub-list-second-b" class="col-lg-9">
+							<p>
+								<%= x.page_link %>
+							</p>
+						</div>
 					</div>
-					<div id="clip-sub-list-second-a" class="col-lg-2">
-						<p>
-							Call To Action
-						</p>
 					</div>
-					<div id="clip-sub-list-second-b" class="col-lg-9">
-						<p>
-							<%= x.call_to_action.description %>
-						</p>
-					</div>
-				</div>
-				<div id="hover-display" class="dashboard-clip-list row">
-					<div id="clip-sub-list-first" class="col-lg-1">
-					</div>
-					<div id="clip-sub-list-second-a" class="col-lg-2">
-						<p>
-							Link to Page
-						</p>
-					</div>
-					<div id="clip-sub-list-second-b" class="col-lg-9">
-						<p>
-							<%= x.page_link %>
-						</p>
-					</div>
-				</div>
-				</div>
-			<% end %>
+				<% end %>
+			<% else %>
+				<h6 class="no-item-message">Hmmm... seems like you have not arhived any clips yet.</h6>
+
 			<% end %>
 		</section>
 

@@ -1,3 +1,190 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.home-top {
+	width: 100vw;
+	height: 650px;
+	background: image-url("home-top.jpg");
+}
+
+.home-top-color-overlay {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(15,15,15,0.5);
+}
+
+.home-nav {
+	color: white;
+	display: flex;
+	height: 100px;
+	padding: 25px;
+}
+
+.home-nav-nav {
+	width: 50%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.home-nav-nav ul li {
+	display: inline;
+	list-style: none;
+	font-size: 1.5em;
+	margin: 0 10px;
+}
+
+.home-nav-nav ul li a {
+	color: white;
+}
+
+.home-nav-logo {
+	width: 50%;
+	display:flex;
+	justify-conent: flex-start;
+	align-items: center;
+}
+
+.home-top-content {
+	width: 100%;
+	height: 450px;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-top-content p {
+	font-size: 2em;
+	line-height: 100%;
+	margin: 20px 0;
+}
+
+.home-top-content input {
+	margin: 20px 0;
+}
+
+.home-features1 {
+	background-color: #F7EBC9;
+	display: flex;
+	flex-direction: column;
+	padding: 25px;
+
+}
+
+.home-features1-top {
+	display: flex;
+	justify-content: center;
+}
+
+.home-features1-top h2 {
+	border-bottom: 3px solid black;
+	padding: 15px 75px;
+}
+
+.home-features1-middle {
+	display: flex;
+	padding: 25px;
+	justify-content: space-around;
+}
+
+.home-features1-middle > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 25%;
+}
+
+.home-features1-middle-textbox {
+	display: flex;
+	justify-content: center;
+}
+
+.home-features1-middle-textbox h1 {
+	width: 30%;
+	text-align: center;
+}
+
+.home-features1-middle-textbox p {
+	width: 70%;
+}
+
+.fa-bullhorn, .fa-link, .fa-share-alt {
+	font-size: 10em;
+	margin: 25px 0;
+}
+
+.home-features1-bottom {
+	display: flex;
+	justify-content: center;
+	padding: 25px;
+}
+
+.home-features2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px;
+}
+
+.home-features2-title {
+	width: 70%;
+	text-align: center;
+	margin: 25px; 
+}
+
+.home-features2-img {
+	width: 65%;
+	margin-top: 25px;
+}
+
+.home-cta {
+	background-color: #F7EBC9;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 25px;
+}
+
+.home-cta-title {
+	padding: 25px;
+	width: 70%;
+	text-align: center;
+}
+
+.home-footer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	color: white;
+	background-color: #474741;
+}
+
+.footer-index {
+	display:flex;
+	justify-content: space-around;
+	padding: 25px;
+
+}
+
+.footer-index > div {
+	width: 25%;
+	margin: 0 25px;
+}
+
+.footer-index div ul li {
+	list-style: none;
+	font-size: 1.2em;
+}
+
+.footer-copyright {
+	color:white;
+	margin-bottom: 15px;
+}
+
+
+

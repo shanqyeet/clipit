@@ -4,6 +4,7 @@ class BrandsController < ApplicationController
   # GET /brands
   # GET /brands.json
   def index
+    @brand = Brand.new
     @brands = Brand.all
   end
 

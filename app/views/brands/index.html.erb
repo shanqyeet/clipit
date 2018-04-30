@@ -1,14 +1,15 @@
 <section class="dashboard-main">
 
 <!-- Dashboard left panel -->
-
-  <div class="dashboard-sub-left container">
-    <a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
-    <div>
+  <div class="dashboard-sub-left">
+    <div class="dashboard-title">
+      <a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
+    </div>
+    <div class="dashboard-sub-left-menu-container">
       <h3><i class="fas fa-edit"></i>&nbspManage</h3>
       <div class="dashboard-sub-left-menu">
         <div>
-          <a href="#">
+          <a href=<%= user_brands_path(current_user)%>>
             <h4><i class="fas fa-caret-right"></i>&nbspBrand</h4>
           </a>
           
@@ -20,12 +21,12 @@
         </div>
       </div>
     </div>
-    <div>
+    <div class="dashboard-sub-left-menu-container">
       <h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
       <div class="dashboard-sub-left-menu">
         <div>
-          <a href=<%=edit_user_registration_path%>>
-            <h4><i class="fas fa-caret-right"></i>&nbspManage password</h4>
+          <a href=<%=edit_user_registration_path %>>
+            <h4><i class="fas fa-caret-right"></i>&nbspManage Password</h4>
           </a>
         </div>
         <div>
@@ -36,35 +37,53 @@
       </div>
 
     </div>
-    <div>
+    <div class="dashboard-sub-left-menu-container dashboard-question">
       <a href="#">
         <h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
       </a>
     </div>
   </div>
 
+
 <!-- Dash bord right panel -->
+  <section class="form-lightbox">
+    <article class="new-brand-form">
+      <div class="new-brand-form-title">
+        <div class="close-button-container">
+          <a id="close-button" href="#"><strong>X</strong></a>
+        </div>
+        <h3>Create New Brand</h3>
+      </div>
+      <div class="new-brand-form-form">
+        <%= render 'form', brand: @brand %>
+      </div>
+    </article>
+  </section>
 
   <div class="dashboard-sub-right">
       <h1>Manage Brands</h1>
-      <%= button_to "Create Brand", new_user_brand_path(current_user.id), class:"btn btn-lg btn-primary", method: :get %>
-
+      <button class="btn btn-lg btn-primary" id="create-brand-button">Create Brand</button>
     <section class="brands-list">
       <div class="row">
-        <% @brands.each do |brand| %>
-         <div class="brand-item col-lg-3">
-            <% if brand.logo.file.nil? %>
-              <%= image_tag("clipit-logo.png", width:"200px", height:"200px")%>
-            <% else %>
-              <img src=<%= brand.logo %> alt="" width="200px" height="200px">
-            <% end %>
-            <h5><%= brand.name %></h5>
-            <div class="brand-items-edits">
-            <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success", method: :get %>
-            <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"}, method: :get %>
-              
+        <% if @brands.present? %> 
+          <% @brands.each do |brand| %>
+            <div class="brand-item col-lg-3">
+              <% if brand.logo.file.nil? %>
+                <%= image_tag("clipit-logo.png", width:"200px", height:"200px")%>
+              <% else %>
+                <img src=<%= brand.logo %> alt="" width="200px" height="200px">
+              <% end %>
+              <h5><%= brand.name %></h5>
+              <div class="brand-items-edits">
+              <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success", method: :get %>
+              <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"}, method: :get %> 
+              </div>
             </div>
-         </div>
+          <% end %>
+        <% else %>
+          <div>
+            <h4>You have not created any brand, create one today!</h4>
+          </div>
         <% end %>
       </div>
     </section>

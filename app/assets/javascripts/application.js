@@ -16,6 +16,14 @@
 //= require_tree .
 //
 
+$("#create-brand-button").click(function(){
+	$(".form-lightbox").css("display","block");
+});
+
+$("#close-button").click(function(event) {
+	event.preventDefault();
+	$(".form-lightbox").css("display","none");
+});
 
 $(".click-target").click(function(event){
 	event.preventDefault();
