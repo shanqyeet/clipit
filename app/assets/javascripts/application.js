@@ -25,6 +25,7 @@ $("#close-button").click(function(event) {
 	$(".form-lightbox").css("display","none");
 });
 
+
 $(".click-target").click(function(event){
 	event.preventDefault();
 	if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == ""){

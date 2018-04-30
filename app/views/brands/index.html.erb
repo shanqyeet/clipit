@@ -46,6 +46,8 @@
 
 
 <!-- Dash bord right panel -->
+
+  <!-- new form pop up -->
   <section class="form-lightbox">
     <article class="new-brand-form">
       <div class="new-brand-form-title">
@@ -59,6 +61,8 @@
       </div>
     </article>
   </section>
+
+  <!-- display of list of items -->
 
   <div class="dashboard-sub-right">
       <h1>Manage Brands</h1>
@@ -75,8 +79,7 @@
               <% end %>
               <h5><%= brand.name %></h5>
               <div class="brand-items-edits">
-              <%= button_to "edit", edit_user_brand_path(id: brand.id), class:"btn btn-success", method: :get %>
-              <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"}, method: :get %> 
+              <%= button_to "delete", user_brand_path(id: brand.id), class:"btn btn-danger", data:{confirm:"WARNING: All CTAs and Clips associated with this logo will be deleted along with its statistics. Proceed?"}, method: :delete %> 
               </div>
             </div>
           <% end %>
