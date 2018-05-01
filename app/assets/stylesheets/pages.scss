@@ -186,5 +186,18 @@
 	margin-bottom: 15px;
 }
 
+// Universal notification 
 
+.universal-notification {
+	height: max-content;
+	background-color: #39FF14;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.universal-notification p {
+	margin: 0;
+}
 

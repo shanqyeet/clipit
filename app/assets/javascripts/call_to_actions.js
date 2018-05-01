@@ -66,7 +66,6 @@ function descLive(){
     } else if (position_input == "center") {
       position_live.style.justifyContent = "center";
     } 
-    alert("is the position changing?");
   }
 
 // Background customization functions

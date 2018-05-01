@@ -15,50 +15,56 @@
 //= require turbolinks
 //= require_tree .
 //
+$(document).on('turbolinks:load',function(){
+	
+	FontAwesome.dom.i2svg();
 
-$("#create-brand-button").click(function(){
-	$(".form-lightbox").css("display","block");
+	$("#create-brand-button").click(function(){
+		$(".form-lightbox").css("display","block");
+	});
+
+	$("#close-button").click(function(event) {
+		event.preventDefault();
+		$(".form-lightbox").css("display","none");
+	});
+
+
+	$(".click-target").click(function(event){
+		event.preventDefault();
+		if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == ""){
+			$(event.target).closest(".dashboard-clip-list").siblings().css("display","flex");		
+		} else if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == "flex"){
+			$(event.target).closest(".dashboard-clip-list").siblings().css("display","");
+		}
+	});
+
+	$(".copy-to-clip").click(function(event){
+	  event.preventDefault();
+	  let copyLink = $(event.target).closest(".dashboard-clip-list").find("#link-source")[0];
+	  console.log(copyLink);
+	  copyLink.focus();
+	  copyLink.select();
+	  document.execCommand("Copy");
+	  alert("Copied the link: " + copyLink.innerHTML);
+	});
+
+	$(".clip-buttons").click(function(event){
+		event.preventDefault();
+		console.log("Clip Buttons: Prevented Default");
+	});
+
+
+	$(".archived-cta-message").hover(function(event){
+		console.log(event.target);
+		$(event.target).closest(".archived-cta-message-container").find(".pop-up-cta-message").fadeToggle();
+	});
+
+	$(".archived-page-link").hover(function(event){
+		$(event.target).closest(".archived-page-link-container").find(".pop-up-page-link").fadeToggle();
+	});
+
 });
 
-$("#close-button").click(function(event) {
-	event.preventDefault();
-	$(".form-lightbox").css("display","none");
-});
-
-
-$(".click-target").click(function(event){
-	event.preventDefault();
-	if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == ""){
-		$(event.target).closest(".dashboard-clip-list").siblings().css("display","flex");		
-	} else if ($(event.target).closest(".dashboard-clip-list").siblings().first()[0].style.display == "flex"){
-		$(event.target).closest(".dashboard-clip-list").siblings().css("display","");
-	}
-});
-
-$(".copy-to-clip").click(function(event){
-  event.preventDefault();
-  let copyLink = $(event.target).closest(".dashboard-clip-list").find("#link-source")[0];
-  console.log(copyLink);
-  copyLink.focus();
-  copyLink.select();
-  document.execCommand("Copy");
-  alert("Copied the link: " + copyLink.innerHTML);
-});
-
-$(".clip-buttons").click(function(event){
-	event.preventDefault();
-	console.log("Clip Buttons: Prevented Default");
-});
-
-
-$(".archived-cta-message").hover(function(event){
-	console.log(event.target);
-	$(event.target).closest(".archived-cta-message-container").find(".pop-up-cta-message").fadeToggle();
-});
-
-$(".archived-page-link").hover(function(event){
-	$(event.target).closest(".archived-page-link-container").find(".pop-up-page-link").fadeToggle();
-});
 
 
 
