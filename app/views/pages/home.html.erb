@@ -14,11 +14,15 @@
 							<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 						</li>
 						<li>
+						<% if current_user.brands.present? %>
 							<% if current_user.brands.first.logo.file.nil? %>
 							<%= link_to image_tag("clipit-logo.png", width:"50", height:"50"), user_path(current_user) %>
 							<% else %>
 							<%= link_to image_tag(current_user.brands.first.logo.thumb), user_path(current_user) %>
 							<% end %>	
+						<% else %>
+							<%= link_to image_tag("clipit-logo.png", width:"50", height:"50"), user_path(current_user) %>
+						<% end %>	
 						</li>
 					<% else %> 
 						<li>
