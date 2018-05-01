@@ -59,13 +59,14 @@ function descLive(){
   function positionLive(){
     let position_live = document.getElementById("cta-container");
     let position_input = document.getElementById("position-input").value;
-    if (position_input == "left") {
+    if (position_input == "flex-start") {
       position_live.style.justifyContent = "flex-start";
-    } else if (position_input == "right") {
+    } else if (position_input == "flex-end") {
       position_live.style.justifyContent = "flex-end";
-    } else if (position_input == "middle") {
+    } else if (position_input == "center") {
       position_live.style.justifyContent = "center";
     } 
+    alert("is the position changing?");
   }
 
 // Background customization functions
