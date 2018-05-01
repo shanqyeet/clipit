@@ -1,3 +1,395 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.dashboard-main {
+	display: flex;
+	width:100%;
+	height: 100%;
+}
+
+.dashboard-sub-left {
+	height:100%;
+	width: 25%;
+	background-color: #F7EBC9;
+	display:flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+}
+
+
+.dashboard-sub-right {
+	width:75%;
+	height: 100%;
+	padding: 50px 5% 50px 5%;
+	overflow:scroll;
+}
+
+
+// Content of on left panel
+
+.dashboard-title {
+	width: 100%;
+	margin-top: 50px;
+	padding: 0 10%;
+	display: flex;
+	justify-content: flex-start;
+	transition: 1s;
+}
+
+.dashboard-title:hover {
+	padding-left: 20%;
+	transition: 1s;
+}
+
+.dashboard-sub-left-menu-container {
+	width: 100%;
+	padding: 0 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-top: 25px;
+}
+
+.dashboard-sub-left-menu {
+	width: 100%;
+}
+
+.dashboard-sub-left-menu div {
+	width: 100%;
+	padding-left: 10%;
+	transition: 1s;
+}
+
+.dashboard-sub-left-menu div:hover {
+	padding-left: 20%;
+	transition: 1s;
+}
+
+.dashboard-question {
+	transition: 1s;
+}
+
+.dashboard-question:hover {
+	padding-left: 20%;
+	transition: 1s;	
+}
+
+// Dashboard statistics
+
+.dashboard-main-statistics {
+	display:flex;
+	justify-content: space-around;
+}
+
+.dashboard-main-statistics div {
+	display:flex;
+	flex-direction: column;
+}
+
+.dashboard-main-statistics div div {
+	text-align: center;
+}
+
+#statistic-font {
+	font-size: 3em;
+	padding: 25px 0;
+}
+
+// Dashboard CTA listing 
+
+.dashboard-cta-title {
+	display:flex;
+	width: 100%;
+	border-bottom: 3px solid black;
+	margin-top: 50px;
+}
+
+#dashboard-cta-title-text {
+	display:flex;
+	justify-content: flex-start;
+}
+
+#dashboard-cta-title-btn {
+	display:flex;
+	justify-content: flex-end;
+}
+
+.dashboard-cta-headers {
+	width: 100%;
+	border-bottom: solid 1.5px black;
+	margin-top: 25px;
+}
+
+.dashboard-cta-headers div {
+	text-align: center;
+	font-weight:bold;
+}
+
+.dashboard-cta-headers div p {
+	font-size: 1.25em;
+}
+
+.dashboard-cta-header.row {
+	margin-left:0;
+}
+
+.dashboard-cta-list {
+	text-align: center;
+	background-color: #ECEFF2;
+	margin: 10px 0; 
+	height: 50px;
+	transition: 0.3s;
+}
+
+.dashboard-cta-list:hover {
+	transform: translate(0, -5px);
+	transition: 0.25s;
+}
+
+.dashboard-cta-list div p {
+	line-height: 50px;
+	font-size: 1.3em;
+}
+
+#dashboard-cta-list-num {
+	padding:0;
+}
+
+#dashboard-cta-list-num p {
+	background-color: #5A6978;
+	font-size: 1.5em;
+	color:white;
+	margin:0;
+	font-weight: strong;
+}
+
+.row {
+	margin-left: 0;
+}
+
+#dashboard-cta-list-buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+// Dashboard Clips Listing
+
+
+.dashboard-clip-title {
+	display:flex;
+	width: 100%;
+	border-bottom: 3px solid black;
+	margin-top: 50px;
+	height: 50px;
+}
+
+
+#dashboard-clip-title-text {
+	display:flex;
+	justify-content: flex-start;
+}
+
+#dashboard-clip-title-form {
+}
+
+#dashboard-clip-title-form form {
+	display:flex;
+	width: 100%;
+
+}
+
+#dashboard-clip-title-form form  > *{
+	padding:0 10px;	
+}
+
+#dashboard-clip-form-select {
+	width:200px;
+	height:42.5px;
+}
+
+#dashboard-clip-form-link {
+	height: 42.5px;
+}
+
+.dashboard-clip-list {
+	text-align: center;
+	background-color: #FCECED;
+	margin: 10px 0; 
+	height: 50px;
+	transition: 0.3s;
+}
+
+.dashboard-clip-list:hover {
+	transform: translate(0, -5px);
+}
+
+
+
+#dashboard-clip-list-num {
+	padding:0;
+}
+
+#dashboard-clip-list-num p {
+	background-color: #F95F62;
+	font-size: 1.5em;
+	color:white;
+	margin:0;
+	font-weight: strong;
+}
+
+.dashboard-clip-list div p {
+	line-height: 50px;
+	font-size: 1.3em;
+}
+
+#dashboard-clip-list-buttons {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#clip-sub-list-first {
+	padding: 0;
+	background-color: white;
+}
+
+#clip-sub-list-second-a {
+	display:flex;
+	justify-content: center;
+	background-color: #ffb3b3;
+	color: white;
+}
+
+#clip-sub-list-second-b {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.fa-info-circle {
+	font-size: 25px;
+	color: gold;
+}
+
+.fa-facebook {
+	font-size: 25px;
+	color:#3b5998;
+}
+
+.fa-twitter {
+	font-size: 25px;
+	color: #0084b4;
+}
+
+.fa-linkedin {
+	font-size: 25px;
+	color: #0077b5;
+
+}
+
+.fa-google-plus-square {
+	font-size: 25px;
+	color:#dd4b39;
+}
+
+.fa-copy {
+	font-size:25px;
+	color:black;
+	transition:0.5s;
+}
+
+.fa-copy:hover, .fa-facebook:hover, .fa-twitter:hover, .fa-linkedin:hover, .fa-google-plus-square:hover, .fa-info-circle:hover {
+	transform: scale(1.5,1.5);
+	transition:0.5s;
+}
+
+.dashboard-link-source {
+	display: flex;
+	align-items: center;
+}
+
+#link-source {
+	height: 30px;
+	width: 100%;
+	border:none;
+	background-color:transparent;
+	resize:none;
+	line-height:30px;
+}
+
+#hover-display {
+	display:none;
+}
+
+
+// Archived Page 
+
+.pop-up-cta-message, .pop-up-page-link {
+	position: absolute;
+	border-radius: 10px;
+	top: -150%;
+	background-color: rgba(15,15,15,0.7);
+	color: white;
+	font-size: 0.7em;
+	padding: 0 25px;
+	width: max-content;
+	line-height: 0;
+	display: none;
+}
+
+.pop-up-cta-message:before, .pop-up-cta-message:after, .pop-up-page-link:before, .pop-up-page-link:after {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.pop-up-cta-message:after, .pop-up-page-link:after {
+	border-color: rgba(15,15,15,0);
+	border-top-color: rgba(15,15,15,0.7);	border-width: 30px;
+	margin-left: -35%;
+}
+
+.pop-up-cta-message:before, .pop-up-page-link:before {
+	border-color: rgba(15,15,15,0);
+	border-width: 36px;
+	margin-left: -36px;
+}
+
+// no item message
+
+.no-item-message {
+	text-align: center;
+	color: grey;
+	margin-top: 25px;
+}
+
+// edit profile and password 
+
+
+// Sign In Page 
+
+.sign-in-page-container, .sign-up-page-container, .edit-password-page-container {
+	display: flex;
+	justify-content: center;
+}
+
+.sign-in-page-form, .sign-up-page-form, .edit-password-page-form {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 500px;
+	padding: 25px;
+	border-top: solid 1px black;
+	border-left: solid 1px black;
+	box-shadow: 5px 5px 5px black;
+}
+
+
+

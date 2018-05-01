@@ -28,7 +28,7 @@
     <%= form.url_field :button_link,class:"form-control", id:"button-link-input", onchange:"buttonLinkLive()" %>
 
     <%= form.label :position %>
-    <%= form.select :position, ["left", "middle", "right"], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
+    <%= form.select :position, [["left","flex-start"],["middle","center"],["right","flex-end"]], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
   </div>
 
   <%= form.label :border_radius%>

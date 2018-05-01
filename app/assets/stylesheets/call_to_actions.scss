@@ -5,7 +5,7 @@
 
 .cta-new-main {
 	display: flex;
-	height: 785px;
+	height: 100%;
 }
 
 .cta-new-left-panel {
@@ -32,16 +32,23 @@
 }
 
 // Live Display of Call To Action 
+#cta-container {
+	width: 70%;
+	position: fixed;
+	bottom: 0%;
+	height: 150px;
+	padding: 25px;
+	display: flex;
+	justify: flex-start;
+}
+
 .cta-new-live {
 	display: flex;
-	position: fixed;
 	z-index: 1;
-	bottom: 5%;
-	left: 32.5%;
 	background-color: #ADD8E6;
 	width: 565px;
 	height: 100px;
-	border-radius: 8px;
+	border-radius: 25px;
 }
 
 .cta-new-live-logo {
@@ -93,6 +100,10 @@
 
 .cta-new-live-button {
 	height: 50%;
+}
+
+.cta-new-live-button a button {
+	border-radius: 25px;
 }
 
 // Cutomization of CTA properties 

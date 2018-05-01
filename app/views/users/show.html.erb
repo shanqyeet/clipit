@@ -1,96 +1,303 @@
-<h1>This is User Dashboard</h1>
-<% if current_user %>
-	<div>
-		<%= link_to "change password", new_user_password_path %>
-		<%= link_to "create brand", new_user_brand_path(current_user) %>
-		<%= link_to "Archived", user_archived_list_path(current_user) %>
-	</div>
-<% end %>
+<section class="dashboard-main">
 
-<!-- Listing of all the brands owned by this user  -->
-<div>
-	<% if !@brand_list.nil? %>
-		<% @brand_list.each do |brand| %>
-			<% if brand.logo.file.nil? %>
-			<%= image_tag("clipit-logo.png", width:"50px", height:"50px") %>
-			<% else %>
-			<%= image_tag("#{brand.logo.thumb}") %> 
-			<% end %>
-			<%= brand.name %> 
-			<%= link_to "edit brand", edit_user_brand_path(brand.user_id, brand.id) %>
-		<% end %>
-	<% end %>
-</div>
+<!-- Dashboard left panel -->
 
-
-<div>
-	<%= link_to "create CTA", new_user_call_to_action_path(current_user) %>
-</div>
-
-
-<!-- Listing of all call to actions created -->
-<div>
-	<h1>List of Call To Actions</h1>
-	<% @cta_list.each do |x| %> 
-		<div>
-			<%= x.brand.name %> 
-			<%= x.description %> 
-			<%= x.count %>
-			<%= link_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This is archive all corresponding Clips"} %>
+	<div class="dashboard-sub-left">
+		<div class="dashboard-title">
+			<a href="<%=user_path(current_user)%>"><h2><i class="fas fa-tachometer-alt"></i>&nbspDashboard</h2></a>
 		</div>
-	<% end %>
-</div>
+		<div class="dashboard-sub-left-menu-container">
+			<h3><i class="fas fa-edit"></i>&nbspManage</h3>
+			<div class="dashboard-sub-left-menu">
+				<div>
+					<a href=<%= user_brands_path(current_user)%>>
+						<h4><i class="fas fa-caret-right"></i>&nbspBrand</h4>
+					</a>
+					
+				</div>
+				<div>
+					<a href="<%= user_archived_list_path(current_user)%>">
+						<h4><i class="fas fa-caret-right"></i>&nbspArchives</h4>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="dashboard-sub-left-menu-container">
+			<h3><i class="fas fa-user-circle"></i>&nbspAccount</h3>
+			<div class="dashboard-sub-left-menu">
+				<div>
+					<a href=<%=edit_user_registration_path %>>
+						<h4><i class="fas fa-caret-right"></i>&nbspManage Password</h4>
+					</a>
+				</div>
+				<div>
+					<a href="#">
+						<h4><i class="fas fa-caret-right"></i>&nbspSubscription</h4>
+					</a>
+				</div>
+			</div>
 
-<div>
-	<%= form_with url:user_clips_path(current_user) do |form| %>
-	  <% if @clip.errors.any? %>
-	    <div id="error_explanation">
-	      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
-
-	      <ul>
-	      <% @clip.errors.full_messages.each do |message| %>
-	        <li><%= message %></li>
-	      <% end %>
-	      </ul>
-	    </div>
-	  <% end %>
-		
-	<%= form.hidden_field :user_id, value: current_user.id %>
-    
-    <%= form.label :select_cta %>
-    <%= form.select :call_to_action_id, @cta_list.collect {|cta| [cta.description, cta.id] }%> 
-	
-	<%= form.label :page_link %> 
-    <%= form.url_field :page_link, class:"form-control" %>
-
-	<div class="actions">
-		<%= form.submit %>
+		</div>
+		<div class="dashboard-sub-left-menu-container dashboard-question">
+			<a href="#">
+				<h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
+			</a>
+		</div>
 	</div>
-	<% end %>
-</div>
 
+<!-- Dash bord right panel -->
 
-<!-- List of Clips  -->
-<h1>List of Active Clips</h1>
-<% if @clip_list.present? %>
-	<% @clip_list.each do |x| %>
-		<div>
-			<%= x.call_to_action.description %>
-			<%= x.page_link %> 
+	<div class="dashboard-sub-right">
+		<div class="dashboard-main-statistics">
+			<div>
+				<div>
+					<p><strong>Total CTA Created</strong></p>
+				</div>		
+				<div>
+					<p id="statistic-font"><strong><%= CallToAction.all.count%></strong></p>
+				</div>			
+			</div>
+			<div>
+				<div>
+					<p><strong>Total Clip Created</strong></p>
+				</div>		
+				<div>
+					<p id="statistic-font"><strong><%= Clip.all.count %></strong></p>
+				</div>	
+			</div>
+			<div>
+				<div>
+					<p><strong>Total Total CTA Clicks</strong></p>
+				</div>		
+				<div>
+					<p id="statistic-font"><strong><%= CallToAction.total_count %></strong></p>
+				</div>	
+			</div>
+			<div>
+				<div>
+					<p><strong>Total Clips Visits</strong></p>
+				</div>		
+				<div>
+					<p id="statistic-font"><strong><%= Clip.total_count %></strong></p>
+				</div>	
+			</div>
+			<div>
+				<div>
+					<p><strong>Overall Conversion</strong></p>
+				</div>		
+				<div>
+					<p id="statistic-font"><strong><%=((CallToAction.total_count.to_f/Clip.total_count.to_f)*100).round(2).to_s + '%'%></strong></p>
+				</div>	
+			</div>
+		</div>
+
+		<!-- Listing of all the CTA owned by this user  -->
+		<section class="cta-section">
 			
-			<textarea id="link-source">
-				<%= "http://localhost:3000/" + x.short_link %>
-			</textarea> 
-			<%= x.count %>
-			<%= x.call_to_action.count %>
-				<% if x.call_to_action != 0 && x.count != 0%>
-					<%= ((x.call_to_action.count.to_f.round(4) / x.count.to_f.round(4))*100).to_s + "%" %>
-				<% else %>
-				<%= "not available" %>
-				<% end %> 
-			<button id="copy-to-clip" onclick="copyLink()">Copy</button>
-			<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
-			<%= link_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post %>
-		</div>
-	<% end %> 
-<% end %> 
+			<!-- title and create button -->
+			<div class="dashboard-cta-title">
+				<div id="dashboard-cta-title-text" style="width:80%">
+					<h3>Active Call To Actions</h3>
+				</div>
+				<div id="dashboard-cta-title-btn" style="width:20%;">
+					<a href="<%=new_user_call_to_action_path(current_user)%>">
+						<button class="btn btn-primary">Create CTA</button>
+					</a>
+				</div>
+			</div>
+
+			<!-- headings of the list  -->
+
+			<div class="dashboard-cta-headers row">
+				<div class="col-lg-1">
+				</div>	
+				<div class="col-lg-2">
+					<p>Brand</p>
+				</div>
+				<div class="col-lg-5">
+					<p>CTA Message</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clips</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clicks</p>
+				</div>	
+				<div class="col-lg-2">
+				</div>	
+			</div>
+			<!-- Listing of all call to actions created -->
+			<% if @cta_list.present? %>
+				<% @count = 0 %>
+				<% @cta_list.each do |x| %> 
+					<div class="dashboard-cta-list row">
+						<div class="col-lg-1" id="dashboard-cta-list-num">
+							<p><%= @count += 1 %></p>
+						</div>	
+						<div class="col-lg-2">
+							<p><%= x.brand.name %></p>
+						</div>
+						<div class="col-lg-5">
+							<p><%= x.description.truncate(40) %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.clips.count %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.cta_counts.count %></p>
+						</div>	
+						<div class="col-lg-2" id="dashboard-cta-list-buttons">
+							<%= button_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This will archive all corresponding Clips"}, class:"btn btn-warning" %>
+						</div>	
+					</div>
+				<% end %>
+			<% else %>
+				<h6 class="no-item-message">Looks like you have yet to create any CTA, make one today!</h6>
+			<% end %>
+		</section>
+
+		<!-- end of CTA list -->
+
+
+		<!-- Listing of all the Clips owned by this user  -->
+		<section class="clip-section">
+			
+			<!-- title and create button -->
+			<div class="dashboard-clip-title">
+				<div  class="col-lg-3" id="dashboard-clip-title-text" style="width:80%">
+					<h3>Active Clips</h3>
+				</div>
+				
+				<div class="col-lg-9" id="dashboard-clip-title-form">
+					<%= form_with url:user_clips_path(current_user) do |form| %>
+					  <% if @clip.errors.any? %>
+					    <div id="error_explanation">
+					      <h2><%= pluralize(clip.errors.count, "error") %> prohibited this clip from being saved:</h2>
+
+					      <ul>
+					      <% @clip.errors.full_messages.each do |message| %>
+					        <li><%= message %></li>
+					      <% end %>
+					      </ul>
+					    </div>
+					  <% end %>
+						
+					<%= form.hidden_field :user_id, value: current_user.id %>
+				    
+				    <%= form.label :select_cta %>
+				    <%= form.select :call_to_action_id, @cta_list.collect {|cta| [cta.description, cta.id] }, {}, id:"dashboard-clip-form-select"%> 
+					
+					<%= form.label :page_link %> 
+				    <%= form.url_field :page_link, class:"form-control", id:"dashboard-clip-form-link" %>
+
+					<div class="actions">
+						<%= form.submit "Create Clip", class:"btn btn-primary" %>
+					</div>
+					<% end %>
+				</div>
+			</div>
+
+			<!-- headings of the Clip list  -->
+
+			<div class="dashboard-cta-headers row">
+				<div class="col-lg-1">
+				</div>	
+				<div class="col-lg-3">
+					<p>Short Link</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Visist</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Clicks</p>
+				</div>	
+				<div class="col-lg-1">
+					<p>Conversion</p>
+				</div>	
+				<div class="col-lg-5">
+				</div>	
+			</div>
+			<!-- Listing of all Clips created -->
+			<% @count = 0 %>
+			<% if @clip_list.present? %>
+				<% @clip_list.each do |x| %>
+				<div>
+					<div class="dashboard-clip-list row">
+						<div class="col-lg-1" id="dashboard-clip-list-num">
+							<p><%= @count += 1 %></p>
+						</div>		
+						<div class="col-lg-3 dashboard-link-source">
+							<textarea readonly rows="1" id="link-source" class="align-middle"><%= "http://localhost:3000/" + x.short_link %>
+							</textarea> 
+							<a href="" class="click-target">
+								<i class="fas fa-info-circle"></i>
+							</a>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.count %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p><%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p>
+						</div>	
+						<div class="col-lg-1">
+							<p>
+							<% if x.call_to_action != 0 && x.count != 0%>
+								<%= ((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+							<% else %>
+								<%= "N/A" %>
+							<% end %> 
+							</p>
+						</div>	
+						<div class="col-lg-5" id="dashboard-clip-list-buttons">
+							<a class="clip-buttons" href="" onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-facebook" aria-hidden="true"></i></a>
+							
+							<a class="clip-buttons" href="" onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-twitter" aria-hidden="true"></i></a>
+							
+							<a class="clip-buttons" href="" onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+							
+							<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" data-turbolink-eval=false><i class="fab fa-google-plus-square" aria-hidden="true" ></i></a>
+							
+							<a href="" class="copy-to-clip"><i class="fas fa-copy" data-turbolink-eval=false></i></a>
+							<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
+
+							<%= button_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post, class:"btn btn-warning" %>
+						</div>	
+						</div>
+						<div id="hover-display" class="dashboard-clip-list row">
+							<div id="clip-sub-list-first" class="col-lg-1">
+							</div>
+							<div id="clip-sub-list-second-a" class="col-lg-2">
+								<p>
+									Call To Action
+								</p>
+							</div>
+							<div id="clip-sub-list-second-b" class="col-lg-9">
+								<p>
+									<%= x.call_to_action.description %>
+								</p>
+							</div>
+						</div>
+						<div id="hover-display" class="dashboard-clip-list row">
+							<div id="clip-sub-list-first" class="col-lg-1">
+							</div>
+							<div id="clip-sub-list-second-a" class="col-lg-2">
+								<p>
+									Link to Page
+								</p>
+							</div>
+							<div id="clip-sub-list-second-b" class="col-lg-9">
+								<p>
+									<%= x.page_link %>
+								</p>
+							</div>
+						</div>
+					</div>
+				<% end %>
+			<% else %>
+				<h6 class="no-item-message">Looks like there are no Clips being created yet, get one today and start driving conversion!</h6>
+			<% end %>
+		</section>
+
+		<!-- end of Clip list -->
+	</div>
+</section>

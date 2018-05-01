@@ -22,8 +22,13 @@ class CallToActionsController < ApplicationController
   end
 
   def counter       
-    @cta = CallToAction.find(params[:cta_id])
-    @cta.count += 1
+    @cta = CtaCount.new
+    raw = params[:cta_count].split
+    short_link = raw[0].split("")
+    short_link = short_link[1, short_link.count].join
+    cta_id = raw[1]
+    @cta.clip_id = Clip.find_by(short_link: short_link).id
+    @cta.call_to_action_id = cta_id.to_i
     if @cta.save
       render json: {response: "Successfully created new count"}
     else 

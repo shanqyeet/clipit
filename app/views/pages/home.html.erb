@@ -1,14 +1,125 @@
-<% if user_signed_in? %>
+<section class="home-top">
+	<div class="home-top-color-overlay">
+		<div class="home-nav">
+			<div class="home-nav-logo">
+				<h1>Clip It</h1>
+			</div>
+			<div class="home-nav-nav">
+				<ul>
+					<li><%= link_to 'Price', '#' %> </li>
+					<li><%= link_to 'Features', '#' %> </li>
+					<li><%= link_to 'Contacts', '#' %> </li>
+					<% if user_signed_in? %> 
+						<li>
+							<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+						</li>
+						<li>
+							<% if current_user.brands.first.logo.file.nil? %>
+							<%= link_to image_tag("clipit-logo.png", width:"50", height:"50"), user_path(current_user) %>
+							<% else %>
+							<%= link_to image_tag(current_user.brands.first.logo.thumb), user_path(current_user) %>
+							<% end %>	
+						</li>
+					<% else %> 
+						<li>
+							<%= link_to "Sign up", new_user_registration_path, method: :get %>
+						</li> 
+						<li>
+							<%= link_to "Sign In", new_user_session_path %>
+						</li>
+					<% end %>
+				</ul>
+				
+			</div>
+	
+		</div>
+		<div class="home-top-content">
+			<h1 style="color:#FFC61A; font-size: 4em;">Get Rewarded For Sharing Content</h1>
+			<p>Place Your Call To Action on any page your share</p>
+			<p>&</p>
+			<p>Drive leads to your website</p>
+			<%= button_to "Sign Up Today", new_user_registration_path, class:"btn btn-lg btn-info" %>
+		</div>
+	</div>
+</section>
+<section class="home-features1">
+	<div class="home-features1-top">
+		<h2>
+			Using Clip It is as easy as 1-2-3!
+		</h2>
+	</div>
+	<div class="home-features1-middle">
+		<div>
+			<i class="fas fa-bullhorn"></i>
+			<div class="home-features1-middle-textbox">
+				<h1>1.</h1>
+				<p>Create Your Call To Action (CTA)</p>
+			</div>
+		</div>
+		<div>
+			<i class="fas fa-link"></i>
+			<div class="home-features1-middle-textbox">
+				<h1>2.</h1>
+				<p>Generate a new link using  the CTA and content you wan to share</p>
+			</div>
+		</div>
+		<div>
+			<i class="fas fa-share-alt"></i>
+			<div class="home-features1-middle-textbox">
+				<h1>3.</h1>
+				<p>Share the generated link and start driving conversions!</p>
+			</div>
+		</div>
+	</div>
+	<div class="home-features1-bottom">
+		<%= button_to "Click to See Demo", '#', class:"btn btn-lg btn-warning", style:"color:white;", method: :get %> 
+	</div>
+</section>
 
+<section class="home-features2">
+	<h2 class="home-features2-title">
+		Analytics tools available to monitor engagement and track your conversions
+	</h2>
+	<%= image_tag "home-analytics.png", class:"home-features2-img" %>
+</section>
+<section class="home-cta">
+	<h2 class="home-cta-title">
+		Get leads by putting your Call-To-Action to every content your share
+	</h2>
+	<%= button_to "Sign Up Today", '#', class:"btn btn-lg btn-warning", method: :get%>
+</section>
 
-<%= p current_user.email %>
-
-<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-<%= link_to "Dashboard", user_path(current_user) %>
-<% end %>
-
-
-<h1>Clip It</h1>
-<%= link_to "Sign up", new_user_registration_path, method: :get %>
-<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-<%= link_to "Sign in with Email", new_user_session_path %>
+<footer class="home-footer">
+	<div class="footer-index">
+		<div>
+			<h1>Clip It</h1>
+		</div>
+		<div>
+			<ul>
+				<li><strong>Company</strong></li>
+				<li>About</li>
+				<li>Blog</li>
+				<li>Contacts</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li><strong>Product</strong></li>
+				<li>FAQs</li>
+				<li>Features</li>
+				<li>Pricing</li>
+			</ul>
+		</div>
+		<div>
+			<ul>
+				<li><strong>Resources</strong></li>
+				<li>Support</li>
+				<li>API</li>
+				<li>Terms and Conditions</li>
+			</ul>
+		</div>
+	</div>
+	<div class="footer-copyright">
+		Clip It Pvt. Ltd. &copy; 2018 All Rights Reserved
+	</div>
+</footer>

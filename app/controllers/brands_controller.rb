@@ -4,6 +4,7 @@ class BrandsController < ApplicationController
   # GET /brands
   # GET /brands.json
   def index
+    @brand = Brand.new
     @brands = Brand.all
   end
 
@@ -60,7 +61,7 @@ class BrandsController < ApplicationController
   def destroy
     @brand.destroy
     respond_to do |format|
-      format.html { redirect_to brands_url, notice: 'Brand was successfully destroyed.' }
+      format.html { redirect_to user_brands_path, notice: 'Brand was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

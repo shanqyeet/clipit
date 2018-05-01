@@ -10,6 +10,7 @@ class ClipsController < ApplicationController
   def short
     @clip = Clip.find_by(short_link: params[:short_link])
     @clip.update(count: @clip.count + 1)
+    @client_display = true
   end 
 
   def archive 
@@ -21,7 +22,7 @@ class ClipsController < ApplicationController
   # GET /clips/1
   # GET /clips/1.json
   def show
-
+    @client_display = true
   end
 
 

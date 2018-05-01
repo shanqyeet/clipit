@@ -1,14 +1,3 @@
-
-function copyLink(){
-
-  let copyLink = document.getElementById("link-source");
-  console.log(copyLink);
-  copyLink.focus();
-  copyLink.select();
-  document.execCommand("Copy");
-  alert("Copied the link: " + copyLink.innerHTML);
-}
-
 // AJAX to update change in brand logo in CTA create form
 
  $("#brand-input").change(function(){
@@ -34,7 +23,7 @@ function copyLink(){
  $("#short-link-page-button").click(function(){
         console.log("AJAX ready");
         $.ajax({
-          url:"/counter?cta_id=" + this.value,
+          url:"/counter?cta_count=" + window.location.pathname + " " + this.value.toString(),
           method: "post",
           success: function(data){
             console.log(data.response);
@@ -68,14 +57,14 @@ function descLive(){
   }
 
   function positionLive(){
-    let position_live = document.getElementById("cta-new-live");
+    let position_live = document.getElementById("cta-container");
     let position_input = document.getElementById("position-input").value;
     if (position_input == "left") {
-      position_live.style.left = "32.5%";
+      position_live.style.justifyContent = "flex-start";
     } else if (position_input == "right") {
-      position_live.style.left = "57.5%";
+      position_live.style.justifyContent = "flex-end";
     } else if (position_input == "middle") {
-      position_live.style.left = "45.5%";
+      position_live.style.justifyContent = "center";
     } 
   }
 

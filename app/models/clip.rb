@@ -1,6 +1,7 @@
 class Clip < ApplicationRecord
 	belongs_to :call_to_action
 	belongs_to :user
+	has_many :cta_counts
 	UNIQUE_ID_LENGTH = 7
 	validates :page_link, presence: true, on: :create 
 	before_create :generate_short_url 
@@ -15,4 +16,13 @@ class Clip < ApplicationRecord
 			self.short_link = url 
 		end 
 	end 
+
+	def self.total_count 
+		all = self.all
+		count = 0 
+		all.each do |x| 
+			count += x.count 
+		end 
+		return count
+	end
 end
