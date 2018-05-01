@@ -25,10 +25,7 @@
 							<%= link_to "Sign up", new_user_registration_path, method: :get %>
 						</li> 
 						<li>
-							<%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path %>
-						</li>
-						<li>
-							<%= link_to "Sign in with Email", new_user_session_path %>
+							<%= link_to "Sign In", new_user_session_path %>
 						</li>
 					<% end %>
 				</ul>
@@ -37,7 +34,7 @@
 	
 		</div>
 		<div class="home-top-content">
-			<h1 style="color:#FFC61A; font-size: 4em;">Get Rewarded For Sharing Conent</h1>
+			<h1 style="color:#FFC61A; font-size: 4em;">Get Rewarded For Sharing Content</h1>
 			<p>Place Your Call To Action on any page your share</p>
 			<p>&</p>
 			<p>Drive leads to your website</p>
@@ -75,7 +72,7 @@
 		</div>
 	</div>
 	<div class="home-features1-bottom">
-		<%= button_to "Click to See Demo", '#', class:"btn btn-lg btn-warning", style:"color:white;" %> 
+		<%= button_to "Click to See Demo", '#', class:"btn btn-lg btn-warning", style:"color:white;", method: :get %> 
 	</div>
 </section>
 
@@ -89,7 +86,7 @@
 	<h2 class="home-cta-title">
 		Get leads by putting your Call-To-Action to every content your share
 	</h2>
-	<%= button_to "Sign Up Today", '#', class:"btn btn-lg btn-warning" %>
+	<%= button_to "Sign Up Today", '#', class:"btn btn-lg btn-warning", method: :get%>
 </section>
 
 <footer class="home-footer">
