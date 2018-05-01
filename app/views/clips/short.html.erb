@@ -27,7 +27,7 @@
 				</a>
 			</div>
 			<div class="cta-new-live-button">
-				<a href="#" target="_blank" >
+				<a href=<%= @clip.page_link %> target="_blank" >
 					<button class="btn" id="short-link-page-button" value=<%= @clip.call_to_action.id %> style="background-color: <%= @clip.call_to_action.btn_color %>; border-radius: <%= @clip.call_to_action.btn_border_radius  + "px" %>; border-style: <%= @clip.call_to_action.btn_border_type %> ; border-width:<%= @clip.call_to_action.btn_border_size %> ; border-color: <%= @clip.call_to_action.btn_border_color %>;"><%=@clip.call_to_action.button_text%></button>
 				</a>
 			</div>
