@@ -96,10 +96,10 @@
 			
 			<!-- title and create button -->
 			<div class="dashboard-cta-title">
-				<div id="dashboard-cta-title-text" style="width:80%">
+				<div id="dashboard-cta-title-text">
 					<h3>Active Call To Actions</h3>
 				</div>
-				<div id="dashboard-cta-title-btn" style="width:20%;">
+				<div id="dashboard-cta-title-btn">
 					<a href="<%=new_user_call_to_action_path(current_user)%>">
 						<button class="btn btn-primary">Create CTA</button>
 					</a>
@@ -129,7 +129,10 @@
 			<!-- Listing of all call to actions created -->
 			<% if @cta_list.present? %>
 				<% @count = 0 %>
+				<% @count_mobile = 0 %>
 				<% @cta_list.each do |x| %> 
+
+				<!-- desktop verions -->
 					<div class="dashboard-cta-list row">
 						<div class="col-lg-1" id="dashboard-cta-list-num">
 							<p><%= @count += 1 %></p>
@@ -150,6 +153,32 @@
 							<%= button_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This will archive all corresponding Clips"}, class:"btn btn-warning" %>
 						</div>	
 					</div>
+
+					<!-- end of desktop version --> 
+
+					<!-- mobile version --> 
+					<div class="dashboard-cta-list-mobile">
+						<div id="dashboard-cta-list-num">
+							<p><%= @count_mobile += 1 %></p>
+						</div>	
+						<div>
+							<p><%= x.brand.name %></p>
+						</div>
+						<div>
+							<p><%= x.description.truncate(40) %></p>
+						</div>	
+						<div>
+							<p><%= x.clips.count %></p>
+						</div>	
+						<div>
+							<p><%= x.cta_counts.count %></p>
+						</div>	
+						<div id="dashboard-cta-list-buttons">
+							<%= button_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This will archive all corresponding Clips"}, class:"btn btn-warning" %>
+						</div>	
+					</div>
+
+					<!-- end of mobile version -->
 				<% end %>
 			<% else %>
 				<h6 class="no-item-message">Looks like you have yet to create any CTA, make one today!</h6>
@@ -164,7 +193,7 @@
 			
 			<!-- title and create button -->
 			<div class="dashboard-clip-title">
-				<div  class="col-lg-3" id="dashboard-clip-title-text" style="width:80%">
+				<div  class="col-lg-3" id="dashboard-clip-title-text">
 					<h3>Active Clips</h3>
 				</div>
 				

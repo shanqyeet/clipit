@@ -108,11 +108,13 @@
 }
 
 #dashboard-cta-title-text {
+	width: 80%;
 	display:flex;
 	justify-content: flex-start;
 }
 
 #dashboard-cta-title-btn {
+	width: 20%;
 	display:flex;
 	justify-content: flex-end;
 }
@@ -191,10 +193,9 @@
 #dashboard-clip-title-text {
 	display:flex;
 	justify-content: flex-start;
+	width: 80%;
 }
 
-#dashboard-clip-title-form {
-}
 
 #dashboard-clip-title-form form {
 	display:flex;
@@ -202,7 +203,7 @@
 
 }
 
-#dashboard-clip-title-form form  > *{
+#dashboard-clip-title-form form  > * {
 	padding:0 10px;	
 }
 
@@ -470,5 +471,83 @@
 				padding: 25px 0;
 			}
 
+			// CTAs List 
+			
+			.dashboard-cta-headers {
+				display:none;
+			}			
+
+			.dashboard-cta-title {
+				display:flex;
+				flex-direction: column;
+				width: 100%;
+				border-bottom: 3px solid black;
+				margin-top: 50px;
+			}
+
+			#dashboard-cta-title-text {
+				display:flex;
+				justify-content: center;
+				width: 100%;
+			}
+
+			#dashboard-cta-title-text h3 {
+				text-align: center;
+				width: 100%;
+			}
+
+
+
+			#dashboard-cta-title-btn {
+				display:flex;
+				justify-content: center;
+				width: 100%;
+				padding: 2.5%;
+			}
+
+			#dashboard-cta-title-btn a {
+				width: 100%;
+			}
+
+			#dashboard-cta-title-btn a > button {
+				width: 100%;
+			}
+
+			#dashboard-cta-list div {
+				width: 100%;
+			}
+
+			.dashboard-cta-list-mobile div{
+				width: 100%;
+			}
+
+			.dashboard-cta-list {
+				display:none;
+			}
+
+		// Clip list 
+			
+			.dashboard-clip-title {
+				display:flex;
+				flex-direction: column;
+				width: 100%;
+				border-bottom: 3px solid black;
+				height: max-content;
+
+	
+			}
+
+			#dashboard-clip-title-form form{
+				display: flex;
+				flex-direction: column;
+			}
+
+			.dashboard-cta-headers {
+				display: none;
+			}
+
+			.dashboard-clip-list {
+				display: none;
+			}
 }
 
