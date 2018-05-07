@@ -162,16 +162,16 @@
 							<p><%= @count_mobile += 1 %></p>
 						</div>	
 						<div>
-							<p><%= x.brand.name %></p>
+							<p>Brand: <%= x.brand.name %></p>
 						</div>
 						<div>
-							<p><%= x.description.truncate(40) %></p>
+							<p>Message: <%= x.description.truncate(30) %></p>
 						</div>	
 						<div>
-							<p><%= x.clips.count %></p>
+							<p>Clips: <%= x.clips.count %></p>
 						</div>	
 						<div>
-							<p><%= x.cta_counts.count %></p>
+							<p>Clicks: <%= x.cta_counts.count %></p>
 						</div>	
 						<div id="dashboard-cta-list-buttons">
 							<%= button_to "Archive!", archive_cta_path(user_id: current_user.id, id:x.id), method: :post, data:{confirm:"Are you sure? This will archive all corresponding Clips"}, class:"btn btn-warning" %>
@@ -219,8 +219,8 @@
 					<%= form.label :page_link %> 
 				    <%= form.url_field :page_link, class:"form-control", id:"dashboard-clip-form-link" %>
 
-					<div class="actions">
-						<%= form.submit "Create Clip", class:"btn btn-primary" %>
+					<div class="actions" id="mobile-actions">
+						<%= form.submit "Create Clip", class:"btn btn-primary", id:"dashboard-clip-form-create" %>
 					</div>
 					<% end %>
 				</div>
@@ -248,9 +248,11 @@
 			</div>
 			<!-- Listing of all Clips created -->
 			<% @count = 0 %>
+			<% @count_mobile = 0 %>
 			<% if @clip_list.present? %>
 				<% @clip_list.each do |x| %>
-				<div>
+				<!-- Desktop version -->
+				<div class="dashboard-clip-list-desktop">
 					<div class="dashboard-clip-list row">
 						<div class="col-lg-1" id="dashboard-clip-list-num">
 							<p><%= @count += 1 %></p>
@@ -321,6 +323,62 @@
 							</div>
 						</div>
 					</div>
+
+					<!-- Mobile Version -->
+
+					<div class="dashboard-clip-list-mobile">
+						<div class="dashboard-clip-list-mobile-mobile">
+							<div class="col-lg-1" id="dashboard-clip-list-num">
+								<p><%= @count_mobile += 1 %></p>
+							</div>		
+							<div class="col-lg-3 dashboard-link-source">
+								<textarea readonly rows="1" id="link-source" class="align-middle"><%= "http://clip-it.herokuapp.com/" + x.short_link %>
+								</textarea> 
+							</div>	
+							<div>
+								<p>
+									<%= x.call_to_action.description %>
+								</p>
+							</div>
+							<div>
+								<p>
+									<%= x.page_link %>
+								</p>
+							</div>
+							<div>
+								<p>Visits: <%= x.count %></p>
+							</div>	
+							<div>
+								<p>Clicks: <%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p>
+							</div>	
+							<div>
+								<p>Conversion:
+								<% if x.call_to_action != 0 && x.count != 0%>
+									<%=((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+								<% else %>
+									<%= "N/A" %>
+								<% end %> 
+								</p>
+							</div>	
+								<div id="dashboard-clip-list-buttons">
+									<a class="clip-buttons" href="" onclick="javascript:window.open('http://www.facebook.com/sharer/sharer.php?u=<%='https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-facebook" aria-hidden="true"></i></a>
+									
+									<a class="clip-buttons" href="" onclick="javascript:window.open('https://twitter.com/intent/tweet?url=<%= 'https://localhost:3000/' + x.short_link %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-twitter" aria-hidden="true"></i></a>
+									
+									<a class="clip-buttons" href="" onclick="javascript:window.open('https://www.linkedin.com/shareArticle?mini=true&url=<%= 'https://localhost:3000/' + x.short_link %>&source=clipit.io', '_blank', 'width=800, height=500, top=200, left=300');void(0);" data-turbolink-eval=false><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+									
+									<a href="https://plus.google.com/share?url=https://locahost:3000/<%= x.short_link%>" onclick="javascript:window.open(this.href,railrails '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" target="_blank" data-turbolink-eval=false><i class="fab fa-google-plus-square" aria-hidden="true" ></i></a>
+									<a href="" class="copy-to-clip"><i class="fas fa-copy" data-turbolink-eval=false></i></a>
+									
+								</div>
+								<div>
+									<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank", id:"dashboard-view-page" %>
+
+									<%= button_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post, class:"btn btn-warning" %>
+								</div>	
+							</div>
+					</div>
+
 				<% end %>
 			<% else %>
 				<h6 class="no-item-message">Looks like there are no Clips being created yet, get one today and start driving conversion!</h6>

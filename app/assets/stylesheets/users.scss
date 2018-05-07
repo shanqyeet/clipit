@@ -146,6 +146,10 @@
 	transition: 0.3s;
 }
 
+.dashboard-cta-list-mobile {
+	display: none;
+}
+
 .dashboard-cta-list:hover {
 	transform: translate(0, -5px);
 	transition: 0.25s;
@@ -516,25 +520,59 @@
 			#dashboard-cta-list div {
 				width: 100%;
 			}
+			
+			.dashboard-cta-list-mobile {
+				display: block;
+			}
 
 			.dashboard-cta-list-mobile div{
 				width: 100%;
+				text-align: center;
+				background-color: lightgrey;
+				height: 50px;
+				margin: 5px 0;
+			}	
+
+			.dashboard-cta-list-mobile div > *{
+				line-height: 50px;
+				font-size: 1.25em;
+			}
+
+			#dashboard-cta-list-num {
+				font-size: 1.75em;
+				font-weight: bold;
 			}
 
 			.dashboard-cta-list {
 				display:none;
 			}
 
+			#dashboard-cta-list-buttons {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
 		// Clip list 
-			
+			.clip-section {
+				padding-bottom: 50px;
+			}
+
 			.dashboard-clip-title {
 				display:flex;
 				flex-direction: column;
 				width: 100%;
 				border-bottom: 3px solid black;
-				height: max-content;
+				height: max-content;	
+			}
+			
+			#dashboard-clip-title-text{
+				width: 100%;
+			}
 
-	
+			#dashboard-clip-title-text h3{
+				width: 100%;
+				text-align: center;	
 			}
 
 			#dashboard-clip-title-form form{
@@ -546,8 +584,58 @@
 				display: none;
 			}
 
-			.dashboard-clip-list {
+			.dashboard-clip-list-desktop {
 				display: none;
 			}
+
+			.dashboard-clip-list-mobile {
+				display: block;
+			}
+			
+			.dashboard-cta-list-mobile-mobile {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.dashboard-clip-list-mobile-mobile div {
+				width: 100%;
+				height: 50px;
+				margin: 5px 0;
+				background-color: pink;
+				overflow: visible;
+			}
+
+			.dashboard-clip-list-mobile-mobile div *{
+				width: 100%;
+				text-align: center;
+				height: 50px;
+				line-height: 50px;
+			}
+
+			#dashboard-clip-form-select {
+				width: 100%;
+				margin-bottom: 10px;
+				border: 1px solid black;
+			}
+
+			#dashboard-clip-form-link {
+				width: 100%;
+				margin-bottom: 10px;
+				border: 1px solid black;
+			}
+			
+			div#mobile-actions {
+				padding: 0;
+			}
+
+			#dashboard-clip-form-create {
+				width: 100%;
+			}
+
+			a#dashboard-view-page {
+				width: 100%;
+				text-align: center;
+			}
+
 }
 
