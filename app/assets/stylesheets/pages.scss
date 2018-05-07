@@ -94,6 +94,7 @@
 .home-features1-top h2 {
 	border-bottom: 3px solid black;
 	padding: 15px 75px;
+	text-align: center;
 }
 
 .home-features1-middle {
@@ -218,7 +219,7 @@
 	
 	.home-top {
 		width: 100vw;
-		height: 900px;
+		height: max-content;
 		background: image-url("home-top.jpg");
 	}
 
@@ -244,6 +245,9 @@
 		display: block;
 		width: 100%;
 		margin: 20px 0;
+		position: relative;
+		height: max-content;
+
 	}
 
 	.home-mobile-nav ul {
@@ -276,7 +280,7 @@
 
 	.home-top-content {
 		width: 100%;
-		height: 450px;
+		height: max-content;
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -299,5 +303,72 @@
 	.home-top-content input {
 		margin: 20px 0;
 	}
+
+
+	// Home page feature1 content 
+	
+	.home-features1-middle {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 25px;
+		justify-content: space-around;
+	}
+
+	.home-features1-middle > div {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+	}
+
+	.home-features1-middle-textbox {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 100%;
+	}
+
+	// footer 
+	
+	.home-footer {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: white;
+		background-color: #474741;
+	}
+
+	.footer-index {
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items:center;
+		width: 100%;
+		padding: 25px;
+
+
+	}
+
+	.footer-index > div {
+		width: 30%;
+		margin: 0 25px;
+	}
+
+	.footer-index div ul {
+		padding: 0;
+	}
+
+	.footer-index div ul li {
+		list-style: none;
+		font-size: 1.2em;
+	}
+
+	.footer-copyright {
+		color:white;
+		margin-bottom: 15px;
+	}
+
 
 }
