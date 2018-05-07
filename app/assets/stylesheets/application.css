@@ -64,3 +64,65 @@ a:hover {
 
 }
 
+
+@media (max-width: 1024px) {
+	.navbar-logo {
+		height: 100%;
+		display:  flex;
+		align-self: flex-start;
+		align-items:  center;
+		width: 25%;
+	}
+
+	.navbar-items {
+		display:  flex;
+		justify-content: flex-end;
+		align-items: center;
+		width:  75%;
+		margin: 0;
+	}
+}
+
+@media (max-width: 480px) {
+	.nav-main {
+		width: 100%;
+		height: max-content;
+		background-color: #FFC61C;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.navbar-logo {
+		height: 100%;
+		width: 100%;
+		display:  flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:  center;
+		padding: 10px;
+	}
+
+	.navbar-items {
+		display:  flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		width:  100%;
+		padding: 0;
+		padding-bottom: 4px;
+		margin: 0;
+	}
+
+	.navbar-items li {
+		list-style:  none;
+		width: 100%;
+		margin: 2px 0;
+		padding: 10px 0 10px 25px;
+		font-size:  2em;
+		background-color: lightyellow;
+	}
+
+
+}

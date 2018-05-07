@@ -213,7 +213,59 @@
 	margin: 0;
 }
 
-@media (max-width: 420px) {
+@media  (max-width: 1024px) {
+
+	.home-top-content {
+		width: 100%;
+		height: max-content;
+		color: white;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		padding: 10px;
+		text-align: center;
+	}
+	
+	.home-top-content h1 {
+		margin: 20px 0;
+	}
+
+	.home-nav-nav {
+		width: 75%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+	}
+
+	.home-mobile-nav {
+		display: none;
+	}
+
+	.home-nav-nav ul li {
+		display: inline;
+		list-style: none;
+		font-size: 1.5em;
+		margin: 0 10px;
+	}
+
+	.home-nav-nav ul li a {
+		color: white;
+	}
+
+	.home-nav-logo {
+		width: 25%;
+		display:flex;
+		justify-conent: flex-start;
+		align-items: center;
+	}
+
+
+}
+
+
+
+@media (max-width: 480px) {
 
 	// navbar 
 	
@@ -274,6 +326,7 @@
 		display:flex;
 		justify-content: center;
 		align-items: center;
+		padding-top: 15px;
 	}
 
 	// home page top box content
