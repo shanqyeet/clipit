@@ -4,6 +4,8 @@
 			<div class="home-nav-logo">
 				<h1>Clip It</h1>
 			</div>
+
+			<!-- Nav bar normal web site  -->
 			<div class="home-nav-nav">
 				<ul>
 					<li><%= link_to 'Price', '#' %> </li>
@@ -33,10 +35,44 @@
 						</li>
 					<% end %>
 				</ul>
-				
 			</div>
-	
+
+			<!-- Nav bar mobile design  -->
+
+			<div class="home-mobile-nav">
+				<ul>
+					<li><%= link_to 'Price', '#' %> </li>
+					<li><%= link_to 'Features', '#' %> </li>
+					<li><%= link_to 'Contacts', '#' %> </li>
+					<% if user_signed_in? %> 
+						<li>
+							<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+						</li>
+						<li>
+						<% if current_user.brands.present? %>
+							<% if current_user.brands.first.logo.file.nil? %>
+							<%= link_to image_tag("user-logo.png", width:"50", height:"50"), user_path(current_user) %>
+							<% else %>
+							<%= link_to image_tag(current_user.brands.first.logo.thumb), user_path(current_user) %>
+							<% end %>	
+						<% else %>
+							<%= link_to image_tag("user-logo.png", width:"50", height:"50"), user_path(current_user) %>
+						<% end %>	
+						</li>
+					<% else %> 
+						<li>
+							<%= link_to "Sign up", new_user_registration_path, method: :get %>
+						</li> 
+						<li>
+							<%= link_to "Sign In", new_user_session_path %>
+						</li>
+					<% end %>
+				</ul>
+			</div>
 		</div>
+
+		<!-- end of navigation bar elements -->
+
 		<div class="home-top-content">
 			<h1 style="color:#FFC61A; font-size: 4em;">Get Rewarded For Sharing Content</h1>
 			<p>Place Your Call To Action on any page your share</p>
@@ -45,6 +81,8 @@
 			<%= button_to "Sign Up Today", new_user_registration_path, class:"btn btn-lg btn-info" %>
 		</div>
 	</div>
+
+		<!-- end of home top content  -->
 </section>
 <section class="home-features1">
 	<div class="home-features1-top">
