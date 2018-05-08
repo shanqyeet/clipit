@@ -8,7 +8,9 @@ $(document).on('turbolinks:load',function(){
             method: "post",
             success: function(data){
               $("#brand-output")[0].src = data.url
+              $("#brand-output-mobile")[0].src = data.url
               $("#cta-new-live-name")[0].innerHTML = data.name
+              $("#cta-new-live-name-mobile")[0].innerHTML = data.name
               console.log(data);
               console.log("hallo");
             },
