@@ -228,6 +228,10 @@
 	transition: 0.3s;
 }
 
+.dashboard-clip-list-mobile {
+	display: none;
+}
+
 .dashboard-clip-list:hover {
 	transform: translate(0, -5px);
 }
@@ -555,7 +559,7 @@
 
 		// Clip list 
 			.clip-section {
-				padding-bottom: 50px;
+				padding-bottom:75px;
 			}
 
 			.dashboard-clip-title {
@@ -636,6 +640,21 @@
 				width: 100%;
 				text-align: center;
 			}
+
+			.dashboard-view-archive {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+			}
+			
+			#dashboard-clip-archive-button {
+				height: 40px;
+				width: 80%;
+				line-height: 25px;
+				margin-bottom: 3px;
+
+			}
+
 
 }
 

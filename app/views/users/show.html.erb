@@ -371,10 +371,10 @@
 									<a href="" class="copy-to-clip"><i class="fas fa-copy" data-turbolink-eval=false></i></a>
 									
 								</div>
-								<div>
+								<div class="dashboard-view-archive">
 									<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank", id:"dashboard-view-page" %>
 
-									<%= button_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post, class:"btn btn-warning" %>
+									<%= button_to "Archive!", archive_clip_path(user_id: current_user.id, id: x.id), method: :post, class:"btn btn-warning", id:"dashboard-clip-archive-button" %>
 								</div>	
 							</div>
 					</div>
