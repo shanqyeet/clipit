@@ -19,12 +19,27 @@
 					<%= @clip.call_to_action.description %>
 				</strong></h6>
 			</div>
+			<div class="cta-new-live-close-mobile">
+				<a href="<%=@clip.page_link%>">
+					<p>X</p>
+				</a>
+			</div>
 		</div>
 		<div class="cta-new-live-endbox">
 			<div class="cta-new-live-close">
 				<a href="<%=@clip.page_link%>">
 					<p>X</p>
 				</a>
+			</div>
+			<div class="cta-new-live-name-mobile">
+				<div class="cta-new-live-logo-mobile">
+					<% if @clip.call_to_action.brand.logo.file.nil? %> 
+						<%= image_tag("clipit-logo.png", width:"50px", height:"50px", id:"brand-output") %>
+					<% else %>
+						<%= image_tag(@clip.call_to_action.brand.logo) %> 
+					<% end %>
+				</div>
+				<p id="cta-new-live-name-mobile">Clip It Today!</p>
 			</div>
 			<div class="cta-new-live-button">
 				<a href=<%= @clip.call_to_action.button_link %> target="_blank" >
