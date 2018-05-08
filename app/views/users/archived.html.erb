@@ -82,6 +82,7 @@
 			<!-- Listing of all call to actions created -->
 			<% if @cta_list.present? %>
 				<% @count = 0 %>
+				<% @count_mobile = 0 %>
 				<% @cta_list.each do |x| %> 
 					<div class="dashboard-cta-list row">
 						<div class="col-lg-1" id="dashboard-cta-list-num">
@@ -100,6 +101,29 @@
 							<p><%= x.cta_counts.count %></p>
 						</div>	
 					</div>
+
+				<!-- end of desktop version --> 
+
+					<!-- mobile version --> 
+					<div class="dashboard-cta-list-mobile">
+						<div id="dashboard-cta-list-num">
+							<p><%= @count_mobile += 1 %></p>
+						</div>	
+						<div>
+							<p>Brand: <%= x.brand.name %></p>
+						</div>
+						<div>
+							<p>Message: <%= x.description.truncate(30) %></p>
+						</div>	
+						<div>
+							<p>Clips: <%= x.clips.count %></p>
+						</div>	
+						<div>
+							<p>Clicks: <%= x.cta_counts.count %></p>
+						</div>	
+					</div>
+
+					<!-- end of mobile version -->
 				<% end %>
 			<% else %>
 				<h6 class="no-item-message">Nope, you have not archived any CTA so far.</h6>
@@ -147,9 +171,10 @@
 			</div>
 			<!-- Listing of all Clips created -->
 			<% @count = 0 %>
+			<% @count_mobile = 0 %>
 			<% if @clip_list.present? %>
 				<% @clip_list.each do |x| %>
-				<div>
+				<div class="dashboard-clip-list-desktop">
 					<div class="dashboard-clip-list row">
 						<div class="col-lg-1" id="dashboard-clip-list-num">
 							<p><%= @count += 1 %></p>
@@ -218,6 +243,42 @@
 						</div>
 					</div>
 					</div>
+				<!-- Mobile Version -->
+
+					<div class="dashboard-clip-list-mobile">
+						<div class="dashboard-clip-list-mobile-mobile">
+							<div class="col-lg-1" id="dashboard-clip-list-num">
+								<p><%= @count_mobile += 1 %></p>
+							</div>		
+							<div>
+								<p>
+									<%= x.call_to_action.description %>
+								</p>
+							</div>
+							<div>
+								<p>
+									<%= x.page_link %>
+								</p>
+							</div>
+							<div>
+								<p>Visits: <%= x.count %></p>
+							</div>	
+							<div>
+								<p>Clicks: <%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p>
+							</div>	
+							<div>
+								<p>Conversion:
+								<% if x.call_to_action != 0 && x.count != 0%>
+									<%=((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
+								<% else %>
+									<%= "N/A" %>
+								<% end %> 
+								</p>
+							</div>	
+					</div>
+				
+				<!-- end of mobile version -->
+
 				<% end %>
 			<% else %>
 				<h6 class="no-item-message">Hmmm... seems like you have not arhived any clips yet.</h6>
