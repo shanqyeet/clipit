@@ -151,7 +151,123 @@
 
 }
 
-@media (max-width: 480px) {
+@media (max-width: 854px) {
+	// Live Display of Call To Action 
+	#cta-container {
+		width: 70%;
+		position: fixed;
+		bottom: 0%;
+		height: max-content;
+		padding: 25px;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	.cta-new-live {
+		display: flex;
+		flex-direction: column;
+		z-index: 1;
+		background-color: #ADD8E6;
+		width: 565px;
+		height: max-content;
+		border-radius: 25px;
+	}
+
+	.cta-new-live-logo {
+		display:none;
+	}
+
+	.cta-new-live-middlebox {
+		display: flex;
+		flex-direction: row;
+		padding: 10px 15px 0 15px;
+		width: 100%;
+	}
+
+	.cta-new-live-name {
+		display:none;
+	}
+
+	.cta-new-live-description {
+		height: 100;
+		width: 95%;
+	}
+
+	.cta-new-live-close-mobile {
+		display: block;
+		width: 5%;
+	}
+
+	.cta-new-live-endbox {
+		height: 30%;
+		display: flex;
+		flex-direction: row;
+		width: 100%;
+		padding:0 15px 10px 15px;
+	}
+
+	.cta-new-live-close {
+		display:none;
+		height: 50%;
+		padding: 5%;
+		justify-content: flex-end;
+	}
+
+	.cta-new-live-name-mobile {
+		display:flex;
+		width: 50%;
+	}
+
+	.cta-new-live-logo-mobile {
+		height: 35px;
+		width: 35px;
+	}
+
+	.cta-new-live-logo-mobile img{
+		width:100%;
+		height:100%;
+	}
+
+	.cta-new-live-name-mobile p {
+		margin:0;
+		margin-left: 5px;
+		width:fit-content;
+		line-height: 35px;
+	}
+
+	.cta-new-live-button {
+		height: 100%;
+		width: 50%;
+		display: flex;
+		justify-content:flex-end;
+	}
+
+	.cta-new-live-button a button {
+		border-radius: 25px;
+	}
+
+	// Cutomization of CTA properties 
+	#bg-border-radius-input, #btn-border-radius-input {
+		width: 85%;
+	}
+
+	#bg-border-radius-output, #btn-border-radius-output {
+		background-color: white;
+		margin-right: 10px;
+		padding: 5px;
+		width: 60px;
+		height: 30px;
+		text-align: center;
+	}
+
+	// Customization of Button Properties
+
+	#btn-text-output {
+		background-color: orange;
+	}
+}
+
+@media (max-width: 720px) {
 	.cta-new-main {
 		display: flex;
 		flex-direction: column;
