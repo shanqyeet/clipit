@@ -400,6 +400,213 @@
 	box-shadow: 5px 5px 5px black;
 }
 
+@media (max-width: 1440px) {
+	#dashboard-cta-title-btn a button {
+		margin-bottom: 5px;
+	}
+
+	.dashboard-cta-list div {
+		overflow: hidden;
+	}
+
+	#dashboard-cta-title-text h3 {
+		font-size: 1.75em;
+	}
+
+	#dashboard-clip-title-text {
+		padding: 0;
+	}
+
+	#dashboard-clip-title-text h3 {
+		font-size: 1.75em;
+		width: max-content;
+	}
+
+
+	#dashboard-clip-title-form {
+		padding:0;
+	}
+
+	#dashboard-clip-form-link {
+		height: 42.5px;
+		min-width: 65px;
+	}
+	// .dashboard-clip-title {
+	// 	flex-direction: column;
+	// }
+
+}
+
+@media (max-width: 1024px) {
+
+	h4, h3, h2, p {
+		font-size: 1.25em;
+	}	
+
+	textarea {
+		font-size: 0.75em;
+	}
+
+	//CTA section
+	
+	#dashboard-cta-title-btn a button {
+		margin-bottom: 5px;
+	}
+
+	#dashboard-cta-title-text h3 {
+		font-size: 1.5em;
+		margin: 0;
+		line-height: 43px;
+	}
+
+	.dashboard-cta-headers {
+		margin-top: 10px;
+	}
+
+	.dashboard-cta-headers div p {
+	 font-size: 0.75em;
+	 margin-bottom: 10px;
+	}
+
+	.dashboard-cta-list {
+		height: 40px;
+	}
+
+	.dashboard-cta-list div {
+		overflow: hidden;
+	}
+
+	.dashboard-cta-list div p {
+	 font-size: 0.75em;
+	 line-height: 40px;
+	}
+
+	.dashboard-main-statistics {
+		flex-wrap: wrap;
+	}
+	
+	#dashboard-cta-list-archive-button {
+		font-size: 0.75em;
+	}
+
+	// Clips section 
+		// Clips title and form
+	
+	.dashboard-clip-title {
+		display:flex;
+		flex-direction: column;
+		width: 100%;
+		border-bottom: 3px solid black;
+		margin-top: 50px;
+		height: max-content;
+	}
+
+
+	#dashboard-clip-title-text {
+		display:flex;
+		justify-content: flex-start;
+		width: 80%;
+		padding: 0;
+	}
+
+	#dashboard-clip-title-text h3 {
+		font-size: 1.5em;
+	}
+
+	#dashboard-clip-title-form.col-lg-9 {
+		padding:0;
+		width: 100%;
+	}
+
+	#dashboard-clip-title-form form {
+		display:flex;
+		flex-direction: column;
+		width: 100%;
+	}
+
+	#dashboard-clip-title-form form  > * {
+		padding:0 10px;	
+	}
+
+	#dashboard-clip-form-select {
+		width:100%;
+		height:42.5px;
+		padding: 0;
+		border: 1px black solid;
+		margin-bottom: 10px;
+	}
+
+	#dashboard-clip-form-link {
+		height: 42.5px;
+		margin-bottom: 10px;
+	}
+
+	#mobile-actions.actions {
+		display: flex;
+		justify-content: flex-end;
+		padding:0;
+	}	
+
+		// Clip lists
+	
+	.dashboard-clip-list {
+		height: 40px;
+	}
+
+	.dashboard-clip-list div {
+		overflow: hidden;
+	}
+
+	.dashboard-clip-list div p {
+	 font-size: 0.75em;
+	 line-height: 40px;
+	}
+
+
+	#dashboard-clip-list-buttons {
+		justify-content: space-between;
+	}
+
+	.fa-info-circle {
+		font-size: 1.2em;
+	}
+
+
+	.fa-facebook, .fa-twitter, .fa-linkedin, .fa-google-plus-square, .fa-copy {
+		font-size: 1em;
+		margin: 0 2px;
+	}
+
+
+	.fa-copy:hover, .fa-facebook:hover, .fa-twitter:hover, .fa-linkedin:hover, .fa-google-plus-square:hover, .fa-info-circle:hover {
+		transform: scale(1.5,1.5);
+		transition:0.5s;
+	}
+
+	.dashboard-link-source {
+		display: flex;
+		align-items: center;
+	}
+
+	#link-source {
+		height: 30px;
+		width: 100%;
+		border:none;
+		background-color:transparent;
+		resize:none;
+		line-height:30px;
+	}
+
+	#dashboard-clip-list-view-page {
+		font-size: 0.75em;
+	}
+
+	#dashboard-clip-list-archive-button {
+		font-size: 0.75em;
+	}
+
+}
+
 @media (max-width: 480px) {
 	// Sign in Page 
 	.sign-in-page-container, .sign-up-page-container, .edit-password-page-container {
