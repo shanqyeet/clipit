@@ -83,7 +83,7 @@ a:hover {
 	}
 }
 
-@media (max-width: 480px) {
+@media (max-width: 727px) {
 	.nav-main {
 		width: 100%;
 		height: max-content;
