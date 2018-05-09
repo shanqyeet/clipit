@@ -62,21 +62,21 @@
 			<!-- headings of the list  -->
 
 			<div class="dashboard-cta-headers row">
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 				</div>	
-				<div class="col-lg-2">
+				<div class="col-lg-2 col-md-2 col-sm-2">
 					<p>Brand</p>
 				</div>
-				<div class="col-lg-5">
+				<div class="col-lg-5 col-md-5 col-sm-5">
 					<p>CTA Message</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 					<p>Clips</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 					<p>Clicks</p>
 				</div>	
-				<div class="col-lg-2">
+				<div class="col-lg-2 col-md-2 col-sm-2">
 				</div>	
 			</div>
 			<!-- Listing of all call to actions created -->
@@ -85,19 +85,19 @@
 				<% @count_mobile = 0 %>
 				<% @cta_list.each do |x| %> 
 					<div class="dashboard-cta-list row">
-						<div class="col-lg-1" id="dashboard-cta-list-num">
+						<div class="col-lg-1 col-md-1 col-sm-1" id="dashboard-cta-list-num">
 							<p><%= @count += 1 %></p>
 						</div>	
-						<div class="col-lg-2">
+						<div class="col-lg-2 col-md-2 col-sm-2">
 							<p><%= x.brand.name %></p>
 						</div>
-						<div class="col-lg-5">
+						<div class="col-lg-5 col-md-5 col-sm-5">
 							<p><%= x.description.truncate(40) %></p>
 						</div>	
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-1">
 							<p><%= x.clips.count %></p>
 						</div>	
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-1">
 							<p><%= x.cta_counts.count %></p>
 						</div>	
 					</div>
@@ -149,24 +149,24 @@
 			<!-- headings of the Clip list  -->
 
 			<div class="dashboard-cta-headers row">
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 				</div>	
-				<div class="col-lg-4">
+				<div class="col-lg-4 col-md-4 col-sm-4">
 					<p>CTA Message</p>
 				</div>	
-				<div class="col-lg-3">
+				<div class="col-lg-3 col-md-3 col-sm-3">
 					<p>Page Link</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 					<p>Visits</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 					<p>Clicks</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 					<p>Conversion</p>
 				</div>	
-				<div class="col-lg-1">
+				<div class="col-lg-1 col-md-1 col-sm-1">
 				</div>	
 			</div>
 			<!-- Listing of all Clips created -->
@@ -176,10 +176,10 @@
 				<% @clip_list.each do |x| %>
 				<div class="dashboard-clip-list-desktop">
 					<div class="dashboard-clip-list row">
-						<div class="col-lg-1" id="dashboard-clip-list-num">
+						<div class="col-lg-1 col-md-1 col-sm-1" id="dashboard-clip-list-num">
 							<p><%= @count += 1 %></p>
 						</div>		
-						<div class="col-lg-4 archived-cta-message-container">
+						<div class="col-lg-4 col-md-4 col-sm-4 archived-cta-message-container">
 							<p class="archived-cta-message">
 								<%= x.call_to_action.description.truncate(30) %>
 							</p>
@@ -187,7 +187,7 @@
 								<%= x.call_to_action.description %>
 							</p>							
 						</div>
-						<div class="col-lg-3 archived-page-link-container">
+						<div class="col-lg-3 col-md-3 col-sm-3 archived-page-link-container">
 							<p class="archived-page-link">
 								<%= x.page_link.truncate(25) %>
 							</p>
@@ -195,13 +195,13 @@
 								<%= x.page_link %>
 							</p>	
 						</div>
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-1">
 							<p><%= x.count %></p>
 						</div>	
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-1">
 							<p><%= x.cta_counts.where(call_to_action_id: x.call_to_action.id).count %></p></p>
 						</div>	
-						<div class="col-lg-1">
+						<div class="col-lg-1 col-md-1 col-sm-1">
 							<p>
 							<% if x.call_to_action != 0 && x.count != 0%>
 								<%= ((x.cta_counts.where(call_to_action_id: x.call_to_action.id).count.to_f / x.count.to_f)*100).round(2).to_s + "%" %>
@@ -210,12 +210,12 @@
 							<% end %> 
 							</p>
 						</div>	
-						<div class="col-lg-1" id="dashboard-clip-list-buttons">
+						<div class="col-lg-1 col-md-1 col-sm-1" id="dashboard-clip-list-buttons">
 							<%= link_to "View Page",user_clip_path(user_id: current_user.id, id: x.id),target:"_blank" %>
 						</div>	
 					</div>
 					<div id="hover-display" class="dashboard-clip-list row">
-						<div id="clip-sub-list-first" class="col-lg-1">
+						<div id="clip-sub-list-first" class="col-lg-1 col-md-1 col-sm-1">
 						</div>
 						<div id="clip-sub-list-second-a" class="col-lg-2">
 							<p>
