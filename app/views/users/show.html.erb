@@ -54,7 +54,7 @@
 					<p><strong>Total CTA Created</strong></p>
 				</div>		
 				<div>
-					<p id="statistic-font"><strong><%= CallToAction.all.count%></strong></p>
+					<p id="statistic-font"><strong><%= @cta_list.count%></strong></p>
 				</div>			
 			</div>
 			<div>
@@ -62,15 +62,15 @@
 					<p><strong>Total Clip Created</strong></p>
 				</div>		
 				<div>
-					<p id="statistic-font"><strong><%= Clip.all.count %></strong></p>
+					<p id="statistic-font"><strong><%= @clip_list.count %></strong></p>
 				</div>	
 			</div>
 			<div>
 				<div>
-					<p><strong>Total Total CTA Clicks</strong></p>
+					<p><strong>Total CTA Clicks</strong></p>
 				</div>		
 				<div>
-					<p id="statistic-font"><strong><%= CallToAction.total_count %></strong></p>
+					<p id="statistic-font"><strong><%= CallToAction.total_count(current_user) %></strong></p>
 				</div>	
 			</div>
 			<div>
@@ -78,7 +78,7 @@
 					<p><strong>Total Clips Visits</strong></p>
 				</div>		
 				<div>
-					<p id="statistic-font"><strong><%= Clip.total_count %></strong></p>
+					<p id="statistic-font"><strong><%= Clip.total_count(current_user) %></strong></p>
 				</div>	
 			</div>
 			<div>
@@ -86,7 +86,8 @@
 					<p><strong>Overall Conversion</strong></p>
 				</div>		
 				<div>
-					<p id="statistic-font"><strong><%=((CallToAction.total_count.to_f/Clip.total_count.to_f)*100).round(2).to_s + '%'%></strong></p>
+					<% @conversion = ((CallToAction.total_count(current_user).to_f/Clip.total_count(current_user).to_f)*100).round(2).to_s %>
+					<p id="statistic-font"><strong><%= (@conversion == "NaN" ? "0" : @conversion.to_s) + '%'%></strong></p>
 				</div>	
 			</div>
 		</div>

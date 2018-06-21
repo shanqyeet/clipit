@@ -17,8 +17,8 @@ class Clip < ApplicationRecord
 		end 
 	end 
 
-	def self.total_count 
-		all = self.all
+	def self.total_count(user)
+		all = self.where(user_id: user.id)
 		count = 0 
 		all.each do |x| 
 			count += x.count 
