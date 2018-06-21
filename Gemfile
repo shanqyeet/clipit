@@ -48,6 +48,7 @@ gem "mini_magick"
 # Image resizing function 
 gem 'jquery-rails' 
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
 
 
 
