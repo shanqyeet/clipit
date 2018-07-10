@@ -19,13 +19,13 @@
     <%= form.select :brand_id, @brand_list.collect {|brand| [brand.name, brand.id] },{include_blank: true},id:"brand-input"%> 
 
     <%= form.label :description %>
-    <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()" %>
+    <%= form.text_field :description, maxlength:85, class:"form-control", id:"desc-input", onkeyup:"descLive()", placeholder:"Create your Call To Action Today! (Psst... max 85 characters only)" %>
 
     <%= form.label :button_text %>
-    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onkeyup:"btnTextLive()" %> 
+    <%= form.text_field :button_text, maxlength:12, class:"form-control", id:"btn-text-input", onkeyup:"btnTextLive()", placeholder:"check it out" %> 
 
     <%= form.label :button_link %>
-    <%= form.url_field :button_link,class:"form-control", id:"button-link-input", onchange:"buttonLinkLive()" %>
+    <%= form.url_field :button_link,class:"form-control", id:"button-link-input", onchange:"buttonLinkLive()", placeholder:"https://www.sample.com" %>
 
     <%= form.label :position %>
     <%= form.select :position, [["left","flex-start"],["middle","center"],["right","flex-end"]], {class:"form-control"}, {id:"position-input", onchange:"positionLive()"} %>
