@@ -5,9 +5,7 @@
 	</div>
 
 	<ul class="navbar-items">
-		<li><%= link_to 'Price', '#' %> </li>
-		<li><%= link_to 'Features', '#' %> </li>
-		<li><%= link_to 'Contacts', '#' %> </li>
+		<li><%= link_to 'Contacts', 'mailto:shanqyeet@gmail.com' %> </li>
 		<% if user_signed_in? %> 
 			<li>
 				<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
