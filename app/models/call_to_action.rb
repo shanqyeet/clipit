@@ -6,8 +6,8 @@ class CallToAction < ApplicationRecord
 	enum status: {active: 0, archived: 1}
 
 
-	def self.total_count 
-		all = self.all
+	def self.total_count(user)
+		all = self.where(user_id: user.id)
 		count = 0 
 		all.each do |x| 
 			count += x.count 

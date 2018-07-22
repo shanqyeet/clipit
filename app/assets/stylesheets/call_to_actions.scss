@@ -2,7 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// placeholder color 
 
+#desc-input::placeholder, #btn-text-input::placeholder, #button-link-input::placeholder {
+	opacity: 0.65;
+}
+
+
+// iframe cover
+
+.iframe-cover {
+	background-color: rgba(25,25,25,0.65);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	z-index: 1;
+}
+
+
+// main thing
 .cta-new-main {
 	display: flex;
 	height: 100%;
@@ -11,8 +29,9 @@
 .cta-new-left-panel {
 	padding: 25px;
 	width: 30%;
-	background-color: #F7EBC9;
+	background-color: #eee;
 	overflow: scroll;
+	border: 2px solid #333;
 }
 
 
@@ -41,10 +60,11 @@
 	width: 70%;
 	position: fixed;
 	bottom: 0%;
-	height: 150px;
+	height: 175px;
 	padding: 25px;
 	display: flex;
 	justify-content: flex-start;
+	z-index: 5;
 }
 
 .cta-new-live {
@@ -52,8 +72,9 @@
 	z-index: 1;
 	background-color: #ADD8E6;
 	width: 565px;
-	height: 100px;
+	height: 120px;
 	border-radius: 25px;
+	padding:10px 0;
 }
 
 .cta-new-live-logo {
@@ -171,6 +192,7 @@
 		width: 565px;
 		height: max-content;
 		border-radius: 25px;
+		padding: 10px 0;
 	}
 
 	.cta-new-live-logo {
@@ -302,6 +324,7 @@
 		width: 565px;
 		height: max-content;
 		border-radius: 25px;
+		padding: 10px 0;
 	}
 
 	.cta-new-live-logo {

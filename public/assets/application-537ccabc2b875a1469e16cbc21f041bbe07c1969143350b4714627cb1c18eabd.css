@@ -1,0 +1,2206 @@
+/* line 7, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.brand-item {
+  box-shadow: 10px 10px 10px grey;
+  margin: 20px 10px;
+  height: max-content;
+  padding: 15px;
+  border: 15px solid lightyellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  transition: 0.5s;
+  outline: 1px solid black;
+}
+
+/* line 24, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.brand-item img {
+  margin: 15px 0;
+}
+
+/* line 28, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.brand-item:hover {
+  transform: scale(1.08);
+  z-index: 99;
+  transition: 0.5s;
+}
+
+/* line 34, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.brand-items-edits {
+  display: flex;
+}
+
+/* line 38, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.brand-items-edits input {
+  margin: 0 5px;
+}
+
+/* line 44, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.new-brand-form {
+  width: max-content;
+  position: fixed;
+  z-index: 99;
+  background-color: white;
+  box-shadow: 5px 5px 10px black;
+  border-radius: 10px;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 59, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.new-brand-form-title {
+  text-align: center;
+  background-color: #F7EBC9;
+  height: 30%;
+  width: 100%;
+  padding: 15px;
+  color: #474741;
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 71, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.close-button-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 76, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+#close-button {
+  transition: 0.5s;
+}
+
+/* line 80, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+#close-button:hover {
+  transform: scale(1.5);
+  transition: 0.5s;
+  color: inherit;
+}
+
+/* line 86, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.new-brand-form-form {
+  padding: 25px;
+}
+
+/* line 90, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/brands.scss */
+.form-lightbox {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 90;
+  background-color: rgba(45, 45, 45, 0.8);
+  display: none;
+}
+/* line 7, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#desc-input::placeholder, #btn-text-input::placeholder, #button-link-input::placeholder {
+  opacity: 0.65;
+}
+
+/* line 15, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-main {
+  display: flex;
+  height: 100%;
+}
+
+/* line 20, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-left-panel {
+  padding: 25px;
+  width: 30%;
+  background-color: #eee;
+  overflow: scroll;
+  border: 2px solid #333;
+}
+
+/* line 29, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-right-panel {
+  width: 70%;
+}
+
+/* line 34, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#brand-input {
+  width: 100%;
+  height: 40px;
+}
+
+/* line 39, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.color-tab {
+  height: 35px;
+  width: 50%;
+}
+
+/* line 44, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#position-input, #bg-outline-type-input {
+  width: 100%;
+  height: 40px;
+}
+
+/* line 50, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#cta-container {
+  width: 70%;
+  position: fixed;
+  bottom: 0%;
+  height: 175px;
+  padding: 25px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* line 60, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live {
+  display: flex;
+  z-index: 1;
+  background-color: #ADD8E6;
+  width: 565px;
+  height: 120px;
+  border-radius: 25px;
+  padding: 10px 0;
+}
+
+/* line 70, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-logo {
+  width: 20%;
+  height: 80%;
+  text-align: center;
+  margin: 2%;
+  display: flex;
+  flex-direciton: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+}
+
+/* line 82, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-logo img {
+  width: auto;
+  height: 100%;
+  border-radius: 7px;
+}
+
+/* line 88, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-middlebox {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 55%;
+}
+
+/* line 95, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-close-mobile {
+  display: none;
+}
+
+/* line 99, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-name {
+  height: 30%;
+}
+
+/* line 103, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-description {
+  height: 70%;
+}
+
+/* line 107, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-endbox {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 10px;
+}
+
+/* line 114, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-name-mobile {
+  display: none;
+}
+
+/* line 118, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-close {
+  height: 50%;
+  padding: 5%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 125, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-button {
+  height: 50%;
+}
+
+/* line 129, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.cta-new-live-button a button {
+  border-radius: 25px;
+}
+
+/* line 134, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#bg-border-radius-input, #btn-border-radius-input {
+  width: 85%;
+}
+
+/* line 138, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#bg-border-radius-output, #btn-border-radius-output {
+  background-color: white;
+  margin-right: 10px;
+  padding: 5px;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+}
+
+/* line 150, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+#btn-text-output {
+  background-color: orange;
+}
+
+/* line 157, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+.iframe-page {
+  height: 100vh;
+}
+
+@media (max-width: 854px) {
+  /* line 167, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #cta-container {
+    width: 70%;
+    position: fixed;
+    bottom: 0%;
+    height: max-content;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* line 177, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: #ADD8E6;
+    width: 565px;
+    height: max-content;
+    border-radius: 25px;
+    padding: 10px 0;
+  }
+
+  /* line 188, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo {
+    display: none;
+  }
+
+  /* line 192, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-middlebox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px 0 15px;
+    width: 100%;
+  }
+
+  /* line 199, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name {
+    display: none;
+  }
+
+  /* line 203, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-description {
+    height: 100;
+    width: 95%;
+  }
+
+  /* line 208, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-close-mobile {
+    display: block;
+    width: 5%;
+  }
+
+  /* line 213, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-endbox {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 15px 10px 15px;
+  }
+
+  /* line 221, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-close {
+    display: none;
+    height: 50%;
+    padding: 5%;
+    justify-content: flex-end;
+  }
+
+  /* line 228, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name-mobile {
+    display: flex;
+    width: 50%;
+  }
+
+  /* line 233, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo-mobile {
+    height: 35px;
+    width: 35px;
+  }
+
+  /* line 238, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo-mobile img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 243, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name-mobile p {
+    margin: 0;
+    margin-left: 5px;
+    width: fit-content;
+    line-height: 35px;
+  }
+
+  /* line 250, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-button {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* line 257, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-button a button {
+    border-radius: 25px;
+  }
+
+  /* line 262, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #bg-border-radius-input, #btn-border-radius-input {
+    width: 85%;
+  }
+
+  /* line 266, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #bg-border-radius-output, #btn-border-radius-output {
+    background-color: white;
+    margin-right: 10px;
+    padding: 5px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+  }
+
+  /* line 277, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #btn-text-output {
+    background-color: orange;
+  }
+}
+@media (max-width: 720px) {
+  /* line 283, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* line 288, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-left-panel {
+    width: 100%;
+    overflow: visible;
+  }
+
+  /* line 293, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-right-panel {
+    width: 100%;
+    height: 600px;
+  }
+
+  /* line 299, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #cta-container {
+    width: 100%;
+    position: fixed;
+    bottom: 0%;
+    height: max-content;
+    padding: 25px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  /* line 309, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    background-color: #ADD8E6;
+    width: 565px;
+    height: max-content;
+    border-radius: 25px;
+    padding: 10px 0;
+  }
+
+  /* line 320, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo {
+    display: none;
+  }
+
+  /* line 324, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-middlebox {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px 0 15px;
+    width: 100%;
+  }
+
+  /* line 331, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name {
+    display: none;
+  }
+
+  /* line 335, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-description {
+    height: 100;
+    width: 95%;
+  }
+
+  /* line 340, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-close-mobile {
+    display: block;
+    width: 5%;
+  }
+
+  /* line 345, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-endbox {
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 15px 10px 15px;
+  }
+
+  /* line 353, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-close {
+    display: none;
+    height: 50%;
+    padding: 5%;
+    justify-content: flex-end;
+  }
+
+  /* line 360, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name-mobile {
+    display: flex;
+    width: 50%;
+  }
+
+  /* line 365, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo-mobile {
+    height: 35px;
+    width: 35px;
+  }
+
+  /* line 370, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-logo-mobile img {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 375, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-name-mobile p {
+    margin: 0;
+    margin-left: 5px;
+    width: fit-content;
+    line-height: 35px;
+  }
+
+  /* line 382, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-button {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* line 389, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  .cta-new-live-button a button {
+    border-radius: 25px;
+  }
+
+  /* line 394, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #bg-border-radius-input, #btn-border-radius-input {
+    width: 85%;
+  }
+
+  /* line 398, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #bg-border-radius-output, #btn-border-radius-output {
+    background-color: white;
+    margin-right: 10px;
+    padding: 5px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+  }
+
+  /* line 410, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/call_to_actions.scss */
+  #btn-text-output {
+    background-color: orange;
+  }
+}
+/* line 8, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-top {
+  width: 100vw;
+  height: 650px;
+  background: url(/assets/home-top-238cc90e6b8a4e98e554982175065cabfbfb0755f85f5404ddf2c5e9f30ce426.jpg);
+  background-size: cover;
+}
+
+/* line 15, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-top-color-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 15, 15, 0.5);
+}
+
+/* line 21, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-nav {
+  color: white;
+  display: flex;
+  height: 100px;
+  padding: 25px;
+}
+
+/* line 28, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-nav-nav {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* line 35, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-mobile-nav {
+  display: none;
+}
+
+/* line 39, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-nav-nav ul li {
+  display: inline;
+  list-style: none;
+  font-size: 1.5em;
+  margin: 0 10px;
+}
+
+/* line 46, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-nav-nav ul li a {
+  color: white;
+}
+
+/* line 50, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-nav-logo {
+  width: 50%;
+  display: flex;
+  justify-conent: flex-start;
+  align-items: center;
+}
+
+/* line 60, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-top-content {
+  width: 100%;
+  height: 450px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* line 71, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-top-content p {
+  font-size: 2em;
+  line-height: 100%;
+  margin: 20px 0;
+}
+
+/* line 77, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-top-content input {
+  margin: 20px 0;
+}
+
+/* line 83, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1 {
+  background-color: #F7EBC9;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+}
+
+/* line 91, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-top {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 96, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-top h2 {
+  border-bottom: 3px solid black;
+  padding: 15px 75px;
+  text-align: center;
+}
+
+/* line 102, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-middle {
+  display: flex;
+  padding: 25px;
+  justify-content: space-around;
+}
+
+/* line 108, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-middle > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+/* line 115, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-middle-textbox {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 120, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-middle-textbox h1 {
+  width: 30%;
+  text-align: center;
+}
+
+/* line 125, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-middle-textbox p {
+  width: 70%;
+}
+
+/* line 129, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.fa-bullhorn, .fa-link, .fa-share-alt {
+  font-size: 10em;
+  margin: 25px 0;
+}
+
+/* line 134, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features1-bottom {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+/* line 140, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+/* line 147, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features2-title {
+  width: 70%;
+  text-align: center;
+  margin: 25px;
+}
+
+/* line 153, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-features2-img {
+  width: 45%;
+  margin-top: 25px;
+}
+
+/* line 158, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-cta {
+  background-color: #F7EBC9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+/* line 166, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-cta-title {
+  padding: 25px;
+  width: 70%;
+  text-align: center;
+}
+
+/* line 172, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.home-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: #474741;
+}
+
+/* line 181, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.footer-index {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
+}
+
+/* line 188, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.footer-index > div {
+  width: 25%;
+  margin: 0 25px;
+}
+
+/* line 193, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.footer-index div ul li {
+  list-style: none;
+  font-size: 1.2em;
+}
+
+/* line 198, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.footer-copyright {
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* line 205, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.universal-notification {
+  height: max-content;
+  background-color: #39FF14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* line 214, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+.universal-notification p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  /* line 220, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content {
+    width: 100%;
+    height: max-content;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* line 232, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content h1 {
+    margin: 20px 0;
+  }
+
+  /* line 236, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-nav {
+    width: 75%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  /* line 243, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  div.home-nav-nav > ul {
+    padding: 0;
+  }
+
+  /* line 247, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-mobile-nav {
+    display: none;
+  }
+
+  /* line 251, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-nav ul li {
+    display: inline;
+    list-style: none;
+    font-size: 1.5em;
+    margin: 0 10px;
+  }
+
+  /* line 258, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-nav ul li a {
+    color: white;
+  }
+
+  /* line 262, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-logo {
+    width: 25%;
+    display: flex;
+    justify-conent: flex-start;
+    align-items: center;
+  }
+}
+@media (max-width: 731px) {
+  /* line 277, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top {
+    width: 100vw;
+    height: max-content;
+    background: url(/assets/home-top-238cc90e6b8a4e98e554982175065cabfbfb0755f85f5404ddf2c5e9f30ce426.jpg);
+  }
+
+  /* line 283, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-color-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 15, 15, 0.5);
+  }
+
+  /* line 289, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
+    padding: 0;
+  }
+
+  /* line 299, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-nav {
+    display: none;
+  }
+
+  /* line 303, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-mobile-nav {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    height: max-content;
+  }
+
+  /* line 312, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-mobile-nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  /* line 318, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-mobile-nav ul li {
+    text-align: center;
+    display: inline;
+    list-style: none;
+    width: 100%;
+    font-size: 2em;
+    margin: 2px 0;
+    background-color: lightyellow;
+    padding: 15px 0;
+  }
+
+  /* line 329, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  li#avatar {
+    background-color: transparent;
+  }
+
+  /* line 333, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-mobile-nav ul li a {
+    color: red;
+  }
+
+  /* line 337, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-nav-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+  }
+
+  /* line 347, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content {
+    width: 100%;
+    height: max-content;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+  }
+
+  /* line 359, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content h1 {
+    margin: 20px 0;
+  }
+
+  /* line 363, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content p {
+    font-size: 2em;
+    line-height: 100%;
+    margin: 20px 0;
+  }
+
+  /* line 369, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-top-content input {
+    margin: 20px 0;
+  }
+
+  /* line 376, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-features1-middle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    justify-content: space-around;
+  }
+
+  /* line 384, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-features1-middle > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* line 391, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-features1-middle-textbox {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  /* line 400, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .home-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: #474741;
+  }
+
+  /* line 409, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .footer-index {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 25px;
+  }
+
+  /* line 420, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .footer-index > div {
+    width: 30%;
+    margin: 0 25px;
+  }
+
+  /* line 425, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .footer-index div ul {
+    padding: 0;
+  }
+
+  /* line 429, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .footer-index div ul li {
+    list-style: none;
+    font-size: 1.2em;
+  }
+
+  /* line 434, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/pages.scss */
+  .footer-copyright {
+    color: white;
+    margin-bottom: 15px;
+  }
+}
+/* line 1, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  margin: 33px;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 10, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 16, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 22, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 25, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 29, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 39, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding: 0 5px 7px;
+}
+
+/* line 44, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 49, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 53, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 59, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 66, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px -7px 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 76, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 82, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+/* line 6, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 12, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-left {
+  height: 100%;
+  width: 25%;
+  background-color: #F7EBC9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* line 23, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-right {
+  width: 75%;
+  height: 100%;
+  padding: 50px 5% 50px 5%;
+  overflow: scroll;
+}
+
+/* line 33, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-title {
+  width: 100%;
+  margin-top: 50px;
+  padding: 0 10%;
+  display: flex;
+  justify-content: flex-start;
+  transition: 1s;
+}
+
+/* line 42, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-title:hover {
+  padding-left: 20%;
+  transition: 1s;
+}
+
+/* line 47, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-left-menu-container {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 25px;
+}
+
+/* line 56, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-left-menu {
+  width: 100%;
+}
+
+/* line 60, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-left-menu div {
+  width: 100%;
+  padding-left: 10%;
+  transition: 1s;
+}
+
+/* line 66, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-sub-left-menu div:hover {
+  padding-left: 20%;
+  transition: 1s;
+}
+
+/* line 71, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-question {
+  transition: 1s;
+}
+
+/* line 75, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-question:hover {
+  padding-left: 20%;
+  transition: 1s;
+}
+
+/* line 82, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-main-statistics {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* line 87, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-main-statistics div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 92, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-main-statistics div div {
+  text-align: center;
+}
+
+/* line 96, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#statistic-font {
+  font-size: 3em;
+  padding: 25px 0;
+}
+
+/* line 103, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-title {
+  display: flex;
+  width: 100%;
+  border-bottom: 3px solid black;
+  margin-top: 50px;
+}
+
+/* line 110, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-cta-title-text {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* line 116, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-cta-title-btn {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* line 122, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-headers {
+  width: 100%;
+  border-bottom: solid 1.5px black;
+  margin-top: 25px;
+}
+
+/* line 128, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-headers div {
+  text-align: center;
+  font-weight: bold;
+}
+
+/* line 133, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-headers div p {
+  font-size: 1.25em;
+}
+
+/* line 137, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-header.row {
+  margin-left: 0;
+}
+
+/* line 141, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-list {
+  text-align: center;
+  background-color: #ECEFF2;
+  margin: 10px 0;
+  height: 50px;
+  transition: 0.3s;
+}
+
+/* line 149, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-list-mobile {
+  display: none;
+}
+
+/* line 153, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-list:hover {
+  transform: translate(0, -5px);
+  transition: 0.25s;
+}
+
+/* line 158, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-cta-list div p {
+  line-height: 50px;
+  font-size: 1.3em;
+}
+
+/* line 163, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-cta-list-num {
+  padding: 0;
+}
+
+/* line 167, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-cta-list-num p {
+  background-color: #5A6978;
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  font-weight: strong;
+}
+
+/* line 175, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.row {
+  margin-left: 0;
+}
+
+/* line 179, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-cta-list-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* line 188, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-clip-title {
+  display: flex;
+  width: 100%;
+  border-bottom: 3px solid black;
+  margin-top: 50px;
+  height: 50px;
+}
+
+/* line 197, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-title-text {
+  display: flex;
+  justify-content: flex-start;
+  width: 80%;
+}
+
+/* line 204, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-title-form form {
+  display: flex;
+  width: 100%;
+}
+
+/* line 210, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-title-form form > * {
+  padding: 0 10px;
+}
+
+/* line 214, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-form-select {
+  width: 200px;
+  height: 42.5px;
+}
+
+/* line 219, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-form-link {
+  height: 42.5px;
+}
+
+/* line 223, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-clip-list {
+  text-align: center;
+  background-color: #FCECED;
+  margin: 10px 0;
+  height: 50px;
+  transition: 0.3s;
+}
+
+/* line 231, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-clip-list-mobile {
+  display: none;
+}
+
+/* line 235, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-clip-list:hover {
+  transform: translate(0, -5px);
+}
+
+/* line 241, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-list-num {
+  padding: 0;
+}
+
+/* line 245, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-list-num p {
+  background-color: #F95F62;
+  font-size: 1.5em;
+  color: white;
+  margin: 0;
+  font-weight: strong;
+}
+
+/* line 253, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-clip-list div p {
+  line-height: 50px;
+  font-size: 1.3em;
+}
+
+/* line 258, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#dashboard-clip-list-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* line 264, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#clip-sub-list-first {
+  padding: 0;
+  background-color: white;
+}
+
+/* line 269, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#clip-sub-list-second-a {
+  display: flex;
+  justify-content: center;
+  background-color: #ffb3b3;
+  color: white;
+}
+
+/* line 276, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#clip-sub-list-second-b {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* line 281, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-info-circle {
+  font-size: 25px;
+  color: gold;
+}
+
+/* line 286, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-facebook {
+  font-size: 25px;
+  color: #3b5998;
+}
+
+/* line 291, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-twitter {
+  font-size: 25px;
+  color: #0084b4;
+}
+
+/* line 296, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-linkedin {
+  font-size: 25px;
+  color: #0077b5;
+}
+
+/* line 302, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-google-plus-square {
+  font-size: 25px;
+  color: #dd4b39;
+}
+
+/* line 307, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-copy {
+  font-size: 25px;
+  color: black;
+  transition: 0.5s;
+}
+
+/* line 313, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.fa-copy:hover, .fa-facebook:hover, .fa-twitter:hover, .fa-linkedin:hover, .fa-google-plus-square:hover, .fa-info-circle:hover {
+  transform: scale(1.5, 1.5);
+  transition: 0.5s;
+}
+
+/* line 318, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.dashboard-link-source {
+  display: flex;
+  align-items: center;
+}
+
+/* line 323, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#link-source {
+  height: 30px;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  line-height: 30px;
+}
+
+/* line 332, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+#hover-display {
+  display: none;
+}
+
+/* line 339, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.pop-up-cta-message, .pop-up-page-link {
+  position: absolute;
+  border-radius: 10px;
+  top: -150%;
+  background-color: rgba(15, 15, 15, 0.7);
+  color: white;
+  font-size: 0.7em;
+  padding: 0 25px;
+  width: max-content;
+  line-height: 0;
+  display: none;
+}
+
+/* line 352, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.pop-up-cta-message:before, .pop-up-cta-message:after, .pop-up-page-link:before, .pop-up-page-link:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+/* line 363, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.pop-up-cta-message:after, .pop-up-page-link:after {
+  border-color: rgba(15, 15, 15, 0);
+  border-top-color: rgba(15, 15, 15, 0.7);
+  border-width: 30px;
+  margin-left: -35%;
+}
+
+/* line 369, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.pop-up-cta-message:before, .pop-up-page-link:before {
+  border-color: rgba(15, 15, 15, 0);
+  border-width: 36px;
+  margin-left: -36px;
+}
+
+/* line 377, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.no-item-message {
+  text-align: center;
+  color: grey;
+  margin-top: 25px;
+}
+
+/* line 388, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.sign-in-page-container, .sign-up-page-container, .edit-password-page-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* line 393, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+.sign-in-page-form, .sign-up-page-form, .edit-password-page-form {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 500px;
+  padding: 25px;
+  border-top: solid 1px black;
+  border-left: solid 1px black;
+  box-shadow: 5px 5px 5px black;
+}
+
+@media (max-width: 1440px) {
+  /* line 404, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-btn a button {
+    margin-bottom: 5px;
+  }
+
+  /* line 408, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list div {
+    overflow: hidden;
+  }
+
+  /* line 412, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-text h3 {
+    font-size: 1.75em;
+  }
+
+  /* line 416, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text {
+    padding: 0;
+  }
+
+  /* line 420, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text h3 {
+    font-size: 1.75em;
+    width: max-content;
+  }
+
+  /* line 426, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-form {
+    padding: 0;
+  }
+
+  /* line 430, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-link {
+    height: 42.5px;
+    min-width: 65px;
+  }
+
+  /* line 435, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #mobile-actions.actions {
+    padding-right: 0;
+  }
+
+  /* line 441, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .archived-cta-mesage-container {
+    overflow: hidden;
+  }
+
+  /* line 445, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .archived-page-link-container {
+    overflow: hidden;
+  }
+}
+@media (max-width: 1024px) {
+  /* line 454, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  h4, h3, h2, p {
+    font-size: 1.25em;
+  }
+
+  /* line 458, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  textarea {
+    font-size: 0.75em;
+  }
+
+  /* line 464, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-btn a button {
+    margin-bottom: 5px;
+  }
+
+  /* line 468, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-text h3 {
+    font-size: 1.5em;
+    margin: 0;
+    line-height: 43px;
+  }
+
+  /* line 474, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-title {
+    margin-top: 0;
+  }
+
+  /* line 478, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-headers {
+    margin-top: 10px;
+  }
+
+  /* line 482, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-headers div p {
+    font-size: 0.75em;
+    margin-bottom: 10px;
+  }
+
+  /* line 487, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list {
+    height: 40px;
+  }
+
+  /* line 491, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list div {
+    overflow: hidden;
+  }
+
+  /* line 495, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list div p {
+    font-size: 0.75em;
+    line-height: 40px;
+  }
+
+  /* line 500, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-main-statistics {
+    flex-wrap: wrap;
+  }
+
+  /* line 504, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-list-archive-button {
+    font-size: 0.75em;
+  }
+
+  /* line 511, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 3px solid black;
+    height: max-content;
+  }
+
+  /* line 520, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+    padding: 0;
+  }
+
+  /* line 527, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text h3 {
+    font-size: 1.5em;
+  }
+
+  /* line 531, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-form.col-lg-9 {
+    padding: 0;
+    width: 100%;
+  }
+
+  /* line 536, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-form form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* line 542, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-form form > * {
+    padding: 0 10px;
+  }
+
+  /* line 546, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-select {
+    width: 100%;
+    height: 42.5px;
+    padding: 0;
+    border: 1px black solid;
+    margin-bottom: 10px;
+  }
+
+  /* line 554, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-link {
+    height: 42.5px;
+    margin-bottom: 10px;
+  }
+
+  /* line 559, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #mobile-actions.actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0;
+  }
+
+  /* line 567, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list {
+    height: 40px;
+  }
+
+  /* line 571, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list div {
+    overflow: hidden;
+  }
+
+  /* line 575, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list div p {
+    font-size: 0.75em;
+    line-height: 40px;
+  }
+
+  /* line 581, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-list-buttons {
+    justify-content: space-between;
+  }
+
+  /* line 585, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .fa-info-circle {
+    font-size: 1.2em;
+  }
+
+  /* line 590, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .fa-facebook, .fa-twitter, .fa-linkedin, .fa-google-plus-square, .fa-copy {
+    font-size: 1em;
+    margin: 0 2px;
+  }
+
+  /* line 596, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .fa-copy:hover, .fa-facebook:hover, .fa-twitter:hover, .fa-linkedin:hover, .fa-google-plus-square:hover, .fa-info-circle:hover {
+    transform: scale(1.5, 1.5);
+    transition: 0.5s;
+  }
+
+  /* line 601, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-link-source {
+    display: flex;
+    align-items: center;
+  }
+
+  /* line 606, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #link-source {
+    height: 30px;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    resize: none;
+    line-height: 30px;
+    font-size: 1.25em;
+  }
+
+  /* line 616, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-list-view-page {
+    font-size: 0.75em;
+  }
+
+  /* line 620, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-list-archive-button {
+    font-size: 0.75em;
+  }
+
+  /* line 626, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .archived-cta-mesage-container {
+    overflow: hidden;
+  }
+
+  /* line 630, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .archived-page-link-container {
+    overflow: hidden;
+  }
+}
+@media (max-width: 480px) {
+  /* line 638, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .sign-in-page-container, .sign-up-page-container, .edit-password-page-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* line 643, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .sign-in-page-form, .sign-up-page-form, .edit-password-page-form {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 85%;
+    padding: 25px;
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    box-shadow: 5px 5px 5px black;
+  }
+
+  /* line 655, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-main {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 662, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-sub-left {
+    height: max-content;
+    width: 100%;
+    background-color: #F7EBC9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px 0;
+  }
+
+  /* line 672, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-sub-right {
+    width: 100%;
+    height: 300px;
+    padding: 50px 5% 50px 5%;
+    overflow: visible;
+  }
+
+  /* line 681, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-title {
+    width: 100%;
+    margin-top: 10px;
+    padding: 0 10%;
+    display: flex;
+    justify-content: flex-start;
+    transition: 1s;
+  }
+
+  /* line 694, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-main-statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  /* line 700, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-main-statistics div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* line 705, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-main-statistics div div {
+    text-align: center;
+  }
+
+  /* line 709, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #statistic-font {
+    font-size: 3em;
+    padding: 25px 0;
+  }
+
+  /* line 716, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-headers {
+    display: none;
+  }
+
+  /* line 720, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 3px solid black;
+    margin-top: 0;
+  }
+
+  /* line 728, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* line 734, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-text h3 {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* line 741, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-btn {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2.5%;
+  }
+
+  /* line 748, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-btn a {
+    width: 100%;
+  }
+
+  /* line 752, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-title-btn a > button {
+    width: 100%;
+  }
+
+  /* line 756, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-list div {
+    width: 100%;
+  }
+
+  /* line 760, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list-mobile {
+    display: block;
+  }
+
+  /* line 764, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list-mobile div {
+    width: 100%;
+    text-align: center;
+    background-color: lightgrey;
+    height: 50px;
+    margin: 5px 0;
+  }
+
+  /* line 772, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list-mobile div > * {
+    line-height: 50px;
+    font-size: 1.25em;
+  }
+
+  /* line 777, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-list-num {
+    font-size: 1.75em;
+    font-weight: bold;
+  }
+
+  /* line 782, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list {
+    display: none;
+  }
+
+  /* line 786, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-cta-list-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* line 793, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .clip-section {
+    padding-bottom: 75px;
+  }
+
+  /* line 797, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-title {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-bottom: 3px solid black;
+    height: max-content;
+  }
+
+  /* line 805, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text {
+    width: 100%;
+  }
+
+  /* line 809, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-text h3 {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* line 814, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-title-form form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* line 819, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-headers {
+    display: none;
+  }
+
+  /* line 823, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list-desktop {
+    display: none;
+  }
+
+  /* line 827, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list-mobile {
+    display: block;
+  }
+
+  /* line 831, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-cta-list-mobile-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* line 836, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list-mobile-mobile div {
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    background-color: pink;
+    overflow: visible;
+    overflow: hidden;
+  }
+
+  /* line 845, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-clip-list-mobile-mobile div * {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+  }
+
+  /* line 852, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-select {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+
+  /* line 858, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-link {
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid black;
+  }
+
+  /* line 864, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  div#mobile-actions {
+    padding: 0;
+  }
+
+  /* line 868, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-form-create {
+    width: 100%;
+  }
+
+  /* line 872, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  a#dashboard-view-page {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* line 877, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  .dashboard-view-archive {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* line 883, /Users/shanqyeet/Desktop/clipit/app/assets/stylesheets/users.scss */
+  #dashboard-clip-archive-button {
+    height: 40px;
+    width: 80%;
+    line-height: 25px;
+    margin-bottom: 3px;
+  }
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+
+
+body {
+	width: 100%;
+	height:  100vh;
+	margin:  0;
+	padding: 0;
+}
+
+a:hover {
+	background-color: transparent;
+	color: blue;
+	text-decoration: none;
+}
+
+.nav-main {
+	width: 100%;
+	height: 75px;
+	background-color: #FFC61C;
+	display: flex;
+	padding:0 20px;
+
+}
+
+.navbar-logo {
+	height: 100%;
+	display:  flex;
+	align-self: flex-start;
+	align-items:  center;
+	width: 20%;
+}
+
+#navbar-logo-img {
+	height: 50px;
+}
+
+.navbar-items {
+	display:  flex;
+	justify-content: flex-end;
+	align-items: center;
+	width:  80%;
+	margin: 0;
+}
+
+.navbar-items li {
+	list-style:  none;
+	margin: 0 10px;
+	font-size:  1.25em;
+}
+
+
+@media (max-width: 1024px) {
+	.navbar-logo {
+		height: 100%;
+		display:  flex;
+		align-self: flex-start;
+		align-items:  center;
+		width: 25%;
+	}
+
+	.navbar-items {
+		text-align: center;
+		display:  flex;
+		justify-content: flex-end;
+		align-items: center;
+		width:  75%;
+		margin: 0;
+	}
+
+
+}
+
+@media (max-width: 727px) {
+	.nav-main {
+		width: 100%;
+		height: max-content;
+		background-color: #FFC61C;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 0;
+	}
+
+	.navbar-logo {
+		height: 100%;
+		width: 100%;
+		display:  flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items:  center;
+		padding: 10px;
+	}
+
+	.navbar-items {
+		display:  flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width:  100%;
+		padding: 0;
+		padding-bottom: 4px;
+		margin: 0;
+	}
+
+	.navbar-items li {
+		list-style:  none;
+		width: 100%;
+		margin: 2px 0;
+		padding: 10px 0;
+		font-size:  2em;
+		background-color: lightyellow;
+	}
+
+	#nav-avatar {
+		background-color: transparent;
+	}
+
+
+}

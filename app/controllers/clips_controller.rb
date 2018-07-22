@@ -7,6 +7,7 @@ class ClipsController < ApplicationController
     @clips = Clip.all
   end
 
+  # @client_display if true prevents the loading of patial navbar
   def short
     @clip = Clip.find_by(short_link: params[:short_link])
     @clip.update(count: @clip.count + 1)

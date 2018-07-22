@@ -8,6 +8,7 @@
 	width: 100vw;
 	height: 650px;
 	background: image-url("home-top.jpg");
+	background-size: cover;
 }
 
 .home-top-color-overlay {
@@ -63,12 +64,17 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
 }
 
 .home-top-content p {
 	font-size: 2em;
 	line-height: 100%;
 	margin: 20px 0;
+}
+
+.home-top-content h1 {
+	padding: 0 100px;
 }
 
 .home-top-content input {
@@ -228,6 +234,7 @@
 	
 	.home-top-content h1 {
 		margin: 20px 0;
+		padding: 0 100px;
 	}
 
 	.home-nav-nav {
