@@ -29,16 +29,11 @@
             <h4><i class="fas fa-caret-right"></i>&nbspManage Password</h4>
           </a>
         </div>
-        <div>
-          <a href="#">
-            <h4><i class="fas fa-caret-right"></i>&nbspSubscription</h4>
-          </a>
-        </div>
       </div>
 
     </div>
     <div class="dashboard-sub-left-menu-container dashboard-question">
-      <a href="#">
+      <a href="mailto:shanqyeet@gmail.com">
         <h3><i class="fas fa-question-circle"></i>&nbspSupport</h3>
       </a>
     </div>
@@ -71,7 +66,7 @@
       <div class="row">
         <% if @brands.present? %> 
           <% @brands.each do |brand| %>
-            <div class="brand-item col-lg-2">
+            <div class="brand-item col-lg-3">
               <% if brand.logo.file.nil? %>
                 <%= image_tag("clipit-logo.png", width:"150px", height:"150px")%>
               <% else %>
